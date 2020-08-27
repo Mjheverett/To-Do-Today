@@ -55,6 +55,7 @@ houstonButton.addEventListener('click', () => {
     houstonButton.classList.add('is-primary');
     getWeather(currentCity);
     document.getElementById('weatherHeader').style.display = "block";
+    getEventsData(currentCity);
 });
 
 seattleButton.addEventListener('click', () => {
@@ -66,6 +67,7 @@ seattleButton.addEventListener('click', () => {
     seattleButton.classList.add('is-primary');
     getWeather(currentCity);
     document.getElementById('weatherHeader').style.display = "block";
+    getEventsData(currentCity);
 });
 
 tampaButton.addEventListener('click', () => {
@@ -77,6 +79,7 @@ tampaButton.addEventListener('click', () => {
     tampaButton.classList.add('is-primary');
     getWeather(currentCity);
     document.getElementById('weatherHeader').style.display = "block";
+    getEventsData(currentCity);
 });
 
 // ********** ********** Get Events Data ********** **********
@@ -84,81 +87,79 @@ tampaButton.addEventListener('click', () => {
 const getEventsData = (currentCity) => {
     getBreweries(currentCity);
     getConcerts(currentCity);
-}
+    getSports(currentCity);
+    getFestivals(currentCity);
+};
 
 // Concert Data
 const getConcerts = (currentCity) => {
-    $.ajax( {
-        url: 'https://api.predicthq.com/v1/events/?category=concerts&active.gte=2020-08-27',
-        type: 'GET',
-        beforeSend : function( xhr ) {
-            xhr.setRequestHeader( "Authorization", "Bearer " + MA_n_yWEgU0Ilwoz6_t6fjyz-xZxGLrB76hXPmFA );
-        },
-        success: function( concertData ) {
-            console.log(concertData);
-        }
+    const concertURL = `https://api.predicthq.com/v1/events/?active.gte=2020-08-27&category=concerts&offset=10&place=${currentCity}`;
+    document.getElementById('concertsList').innerHTML = '';
+    getPredict(concertURL).then(function(concertData) {
+        concertData.results.map(function(concert) {    
+            const concertList = document.getElementById('concertsList');
+            const concertListName = document.createElement('li');
+            concertListName.innerText = concert.title;
+            concertList.appendChild(concertListName);
+        })
     });
 };
 
 // Sports Data
 const getSports = (currentCity) => {
-    $.ajax( {
-        url: 'https://api.predicthq.com/v1/events/?category=sports&active.gte=2020-08-27',
-        type: 'GET',
-        beforeSend : function( xhr ) {
-            xhr.setRequestHeader( "Authorization", "Bearer " + MA_n_yWEgU0Ilwoz6_t6fjyz-xZxGLrB76hXPmFA );
-        },
-        success: function( sportsData ) {
-            console.log(sportsData);
-        }
+    const sportURL = `https://api.predicthq.com/v1/events/?active.gte=2020-08-27&category=sports&offset=10&place=${currentCity}`;
+    document.getElementById('sportsList').innerHTML = '';
+    getPredict(sportURL).then(function(sportData) {
+        sportData.results.map(function(sport) {    
+            const sportList = document.getElementById('sportsList');
+            const sportListName = document.createElement('li');
+            sportListName.innerText = sport.title;
+            sportList.appendChild(sportListName);
+        })
     });
 };
 
 // Expos Data
-const getExpos = (currentCity) => {
-    $.ajax( {
-        url: 'https://api.predicthq.com/v1/events/?category=expos&active.gte=2020-08-27',
-        type: 'GET',
-        beforeSend : function( xhr ) {
-            xhr.setRequestHeader( "Authorization", "Bearer " + MA_n_yWEgU0Ilwoz6_t6fjyz-xZxGLrB76hXPmFA );
-        },
-        success: function( sportsData ) {
-            console.log(sportsData);
-        }
-    });
-};
+
 
 // Community Data
-const getCommunity = (currentCity) => {
-    const communityURL = `https://api.predicthq.com/v1/events/?category=community&active.gte=2020-08-27`;
-    get(communityURL).then(function(fetchResponse) {
-        console.log("Community Events", fetchResponse);
-    });
-};
+
 
 // Festivals Data
 const getFestivals = (currentCity) => {
-    const festivalsURL = `https://api.predicthq.com/v1/events/?category=festivals&active.gte=2020-08-27`;
-    get(festivalsURL).then(function(fetchResponse) {
-        console.log("Festivals", fetchResponse);
-    });
+    const festivalURL = `https://api.predicthq.com/v1/events/?active.gte=2020-08-27&category=festivals&offset=10&place=${currentCity}`;
+    document.getElementById('festivalsList').innerHTML = '';
+    getPredict(festivalURL).then(function(festivalData) {
+        if (festivalData.results != '') {
+            const festivalList = festivalData.results;
+            festivalList.map(function(festival) {
+                const festivalList = document.getElementById('festivalsList');
+                const festivalListName = document.createElement('li');
+                festivalListName.innerText = festival.title;
+                festivalList.appendChild(festivalListName);
+            })
+        } else {
+            const festivalList = document.getElementById('festivalsList');
+            const festivalListName = document.createElement('p');
+            festivalListName.innerText = "No Festivals Scheduled";
+            festivalList.appendChild(festivalListName);
+        }
+    })
 };
 
 // Performing-arts
-const getPerformingArts = (currentCity) => {
-    const performingArtsURL = `https://api.predicthq.com/v1/events/?category=performing-arts&active.gte=2020-08-27`;
-    get(performingArtsURL).then(function(fetchResponse) {
-        console.log("Performing-Arts", fetchResponse);
-    });
-};
+
 
 // Craft Beer Data
 const getBreweries = (currentCity) => {
     const breweryURL = `https://api.openbrewerydb.org/breweries?by_city=${currentCity}`;
+    document.getElementById('breweriesList').innerHTML = '';
     get(breweryURL).then(function(fetchResponse) {
         fetchResponse.map(function(brewery) {
-            console.log("brewery name:", brewery.name);
-            // DOM object = brewery.name;
+            const breweryList = document.getElementById('breweriesList')
+            const breweryListName = document.createElement('li');
+            breweryListName.innerText = brewery.name;
+            breweryList.appendChild(breweryListName);
         })
     });
 };
