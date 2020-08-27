@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // Get weather data for selected city
 const getWeather = (currentCity) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=c0ae55bcbeaae633fae083cbaa9bdbfb&units=imperial`;
-    get(url).then(function(fetchResponse) {
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=c0ae55bcbeaae633fae083cbaa9bdbfb&units=imperial`;
+    get(weatherURL).then(function(fetchResponse) {
         const weatherTemp = document.getElementById('weatherTemp');
         weatherTemp.innerHTML = `Temperature: ${fetchResponse.main.temp} F`;
         const weatherFeelsLikeTemp = document.getElementById('weatherFeelsLikeTemp');
@@ -50,13 +50,62 @@ houstonButton.addEventListener('click', () => {
 
 // ********** ********** Get Events Data ********** **********
 
+
+
 // Concert Data
-
-
+const getConcerts = (currentCity) => {
+    const concertURL = `https://api.predicthq.com/v1/events/?category=concerts&active.gte=2020-08-27`;
+    get(concertURL).then(function(fetchResponse) {
+        console.log("concerts", fetchResponse);
+    });
+};
 
 // Sports Data
+const getSports = (currentCity) => {
+    const sportsURL = `https://api.predicthq.com/v1/events/?category=sports&active.gte=2020-08-27`;
+    get(sportsURL).then(function(fetchResponse) {
+        console.log("sports", fetchResponse);
+    });
+};
 
+// Expos Data
+const getExpos = (currentCity) => {
+    const ExposURL = `https://api.predicthq.com/v1/events/?category=expos&active.gte=2020-08-27`;
+    get(ExposURL).then(function(fetchResponse) {
+        console.log("Expos", fetchResponse);
+    });
+};
+
+// Community Data
+const getCommunity = (currentCity) => {
+    const communityURL = `https://api.predicthq.com/v1/events/?category=community&active.gte=2020-08-27`;
+    get(communityURL).then(function(fetchResponse) {
+        console.log("Community Events", fetchResponse);
+    });
+};
+
+
+// Festivals Data
+const getFestivals = (currentCity) => {
+    const festivalsURL = `https://api.predicthq.com/v1/events/?category=festivals&active.gte=2020-08-27`;
+    get(festivalsURL).then(function(fetchResponse) {
+        console.log("festivals", fetchResponse);
+    });
+};
+
+// Performing-arts
+const getPerformingArts = (currentCity) => {
+    const performingArtsURL = `https://api.predicthq.com/v1/events/?category=performing-arts&active.gte=2020-08-27`;
+    get(performingArtsURL).then(function(fetchResponse) {
+        console.log("Performing-Arts", fetchResponse);
+    });
+};
 
 
 // Craft Beer Data
-
+const getBreweries = (currentCity) => {
+    const breweryURL = `https://api.openbrewerydb.org/breweries?by_city=atlanta`;
+    get(breweryURL).then(function(fetchResponse) {
+        console.log("breweries", fetchResponse.name);
+    });
+};
