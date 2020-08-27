@@ -43,6 +43,7 @@ atlantaButton.addEventListener('click', () => {
     atlantaButton.classList.add('is-primary');
     getWeather(currentCity);
     document.getElementById('weatherHeader').style.display = "block";
+    getEventsData(currentCity);
 });
 
 houstonButton.addEventListener('click', () => {
@@ -80,27 +81,50 @@ tampaButton.addEventListener('click', () => {
 
 // ********** ********** Get Events Data ********** **********
 
+const getEventsData = (currentCity) => {
+    getBreweries(currentCity);
+    getConcerts(currentCity);
+}
+
 // Concert Data
 const getConcerts = (currentCity) => {
-    const concertURL = `https://api.predicthq.com/v1/events/?category=concerts&active.gte=2020-08-27`;
-    get(concertURL).then(function(fetchResponse) {
-        console.log("concerts", fetchResponse);
+    $.ajax( {
+        url: 'https://api.predicthq.com/v1/events/?category=concerts&active.gte=2020-08-27',
+        type: 'GET',
+        beforeSend : function( xhr ) {
+            xhr.setRequestHeader( "Authorization", "Bearer " + MA_n_yWEgU0Ilwoz6_t6fjyz-xZxGLrB76hXPmFA );
+        },
+        success: function( concertData ) {
+            console.log(concertData);
+        }
     });
 };
 
 // Sports Data
 const getSports = (currentCity) => {
-    const sportsURL = `https://api.predicthq.com/v1/events/?category=sports&active.gte=2020-08-27`;
-    get(sportsURL).then(function(fetchResponse) {
-        console.log("sports", fetchResponse);
+    $.ajax( {
+        url: 'https://api.predicthq.com/v1/events/?category=sports&active.gte=2020-08-27',
+        type: 'GET',
+        beforeSend : function( xhr ) {
+            xhr.setRequestHeader( "Authorization", "Bearer " + MA_n_yWEgU0Ilwoz6_t6fjyz-xZxGLrB76hXPmFA );
+        },
+        success: function( sportsData ) {
+            console.log(sportsData);
+        }
     });
 };
 
 // Expos Data
 const getExpos = (currentCity) => {
-    const ExposURL = `https://api.predicthq.com/v1/events/?category=expos&active.gte=2020-08-27`;
-    get(ExposURL).then(function(fetchResponse) {
-        console.log("Expos", fetchResponse);
+    $.ajax( {
+        url: 'https://api.predicthq.com/v1/events/?category=expos&active.gte=2020-08-27',
+        type: 'GET',
+        beforeSend : function( xhr ) {
+            xhr.setRequestHeader( "Authorization", "Bearer " + MA_n_yWEgU0Ilwoz6_t6fjyz-xZxGLrB76hXPmFA );
+        },
+        success: function( sportsData ) {
+            console.log(sportsData);
+        }
     });
 };
 
@@ -130,8 +154,11 @@ const getPerformingArts = (currentCity) => {
 
 // Craft Beer Data
 const getBreweries = (currentCity) => {
-    const breweryURL = `https://api.openbrewerydb.org/breweries?by_city=atlanta`;
+    const breweryURL = `https://api.openbrewerydb.org/breweries?by_city=${currentCity}`;
     get(breweryURL).then(function(fetchResponse) {
-        console.log("breweries", fetchResponse.name);
+        fetchResponse.map(function(brewery) {
+            console.log("brewery name:", brewery.name);
+            // DOM object = brewery.name;
+        })
     });
 };
