@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TO-DO TODAY</title>
     <link href="styles/styles.css" rel="stylesheet">
     <!-- <link href="add google fonts here" rel="stylesheet"> -->
-  </head>
-  <body>
+</head>
+<body>
 
     <!-- Navbar -->
     <div class="hero-head">
@@ -41,11 +41,11 @@
     </div>
 
     <!-- Hero Image -->
-    <section class="hero is-info is-large">
+    <section class="hero is-info is-medium">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Large title
+                    Find local events to-do, Today!
                 </h1>
             </div>
         </div>
@@ -65,12 +65,23 @@
         </div>
     </section> -->
 
+    <!-- Weather Data-->
+    <section class="section">
+        <div class="container" id="weatherHeader">
+            <h1 class="title">Local Weather</h1>
+            <p class="content" id="weatherTemp"></p>
+            <p class="content" id="weatherFeelsLikeTemp"></p>
+            <p class="content" id="weatherHumid"></p>
+            <p class="content" id="weatherWind"></p>
+        </div>
+    </section>
+
     <!-- Button -->
     <section class="section">
         <div class="container">
             <div class="buttons has-addons is-centered">
-                <button class="button">Atlanta</button>
-                <button class="button">Houston</button>
+                <button class="button" id="atlantaButton">Atlanta</button>
+                <button class="button" id="houstonButton">Houston</button>
             </div>
         </div>
     </section>
@@ -78,26 +89,44 @@
     <!-- Activites List-->
     <section class="section">
         <div class="container">
-        <h1 class="title">Section</h1>
+            <h1 class="title">Event Categories</h1>
+        </div>
+        <div class="container" id="eventTypeCheckboxes">
+            <label class="checkbox">
+                <input type="checkbox" id="concertSelect">
+                Concerts
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="sportsSelect">
+                Sporting Events
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="beerSelect">
+                Craft Beer and Cider
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="communitySelect">
+                Community Events
+            </label>
         </div>
     </section>
 
     <!-- Dashboard -->
     <div class="section">
-        <div class="columns">
+        <div class="columns" id="eventsColumns">
             <main class="column">
             <div class="level">
                 <div class="level-left">
-                <div class="level-item">
-                    <div class="title">Things To-Do Today</div>
-                </div>
+                    <div class="level-item">
+                        <div class="title">Things To-Do Today</div>
+                    </div>
                 </div>
                 <div class="level-right">
-                <div class="level-item">
-                    <button type="button" class="button is-small">
-                    Thursday, August 27
-                    </button>
-                </div>
+                    <div class="level-item">
+                        <button type="button" class="button is-small">
+                        Thursday, August 27
+                        </button>
+                    </div>
                 </div>
             </div>
             
@@ -215,9 +244,9 @@
                     First Something
                     </p>
                     <div class="panel-block">
-                    <figure class="image is-16x9">
-                        <img src="https://placehold.it/1280x720">
-                    </figure>
+                        <figure class="image is-16x9">
+                            <img src="https://placehold.it/1280x720">
+                        </figure>
                     </div>
                 </div>
                 </div>
@@ -227,9 +256,9 @@
                     Something
                     </p>
                     <div class="panel-block">
-                    <figure class="image is-16x9">
-                        <img src="https://placehold.it/1280x720">
-                    </figure>
+                        <figure class="image is-16x9">
+                            <img src="https://placehold.it/1280x720">
+                        </figure>
                     </div>
                 </div>
                 </div>
@@ -239,9 +268,9 @@
                     Something
                     </p>
                     <div class="panel-block">
-                    <figure class="image is-16x9">
-                        <img src="https://placehold.it/1280x720">
-                    </figure>
+                        <figure class="image is-16x9">
+                            <img src="https://placehold.it/1280x720">
+                        </figure>
                     </div>
                 </div>
                 </div>
@@ -251,9 +280,9 @@
                     Something Else
                     </p>
                     <div class="panel-block">
-                    <figure class="image is-16x9">
-                        <img src="https://placehold.it/1280x720">
-                    </figure>
+                        <figure class="image is-16x9">
+                            <img src="https://placehold.it/1280x720">
+                        </figure>
                     </div>
                 </div>
                 </div>
@@ -287,12 +316,13 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-            <strong>TO-DO TODAY</strong> by <a href="add github link">Team Members</a>.
+            <strong>TO-DO TODAY</strong> by <a href="https://github.com/Mjheverett/To-Do-Today">Team Members</a>.
             </p>
         </div>
     </footer>
 
-  </body>
-  <!-- JS Scripts -->
-  <script src="scripts/scripts.js"></script>
+</body>
+<!-- JS Scripts -->
+<script src="scripts/get.js"></script>
+<script src="scripts/scripts.js"></script>
 </html>
