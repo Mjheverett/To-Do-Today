@@ -3,6 +3,8 @@
 let currentCity = '';
 const atlantaButton = document.getElementById('atlantaButton');
 const houstonButton = document.getElementById('houstonButton');
+const seattleButton = document.getElementById('seattleButton');
+const tampaButton = document.getElementById('tampaButton');
 
 //These two lines hide and un-hide the dashboard event block: 
 // document.getElementById('eventsColumns').style.display = "block";
@@ -18,6 +20,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 const getWeather = (currentCity) => {
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=c0ae55bcbeaae633fae083cbaa9bdbfb&units=imperial`;
     get(weatherURL).then(function(fetchResponse) {
+        const weatherTitle = document.getElementById('weatherTitle');
+        weatherTitle.innerHTML = `${currentCity} Weather`;
         const weatherTemp = document.getElementById('weatherTemp');
         weatherTemp.innerHTML = `Temperature: ${fetchResponse.main.temp} F`;
         const weatherFeelsLikeTemp = document.getElementById('weatherFeelsLikeTemp');
@@ -34,6 +38,8 @@ atlantaButton.addEventListener('click', () => {
     currentCity = "Atlanta";
     console.log("current city:", currentCity);
     houstonButton.classList.remove('is-primary');
+    seattleButton.classList.remove('is-primary');
+    tampaButton.classList.remove('is-primary');
     atlantaButton.classList.add('is-primary');
     getWeather(currentCity);
     document.getElementById('weatherHeader').style.display = "block";
@@ -43,14 +49,36 @@ houstonButton.addEventListener('click', () => {
     currentCity = "Houston";
     console.log("current city:", currentCity);
     atlantaButton.classList.remove('is-primary');
+    seattleButton.classList.remove('is-primary');
+    tampaButton.classList.remove('is-primary');
     houstonButton.classList.add('is-primary');
     getWeather(currentCity);
     document.getElementById('weatherHeader').style.display = "block";
 });
 
+seattleButton.addEventListener('click', () => {
+    currentCity = "Seattle";
+    console.log("current city:", currentCity);
+    atlantaButton.classList.remove('is-primary');
+    houstonButton.classList.remove('is-primary');
+    tampaButton.classList.remove('is-primary');
+    seattleButton.classList.add('is-primary');
+    getWeather(currentCity);
+    document.getElementById('weatherHeader').style.display = "block";
+});
+
+tampaButton.addEventListener('click', () => {
+    currentCity = "Tampa";
+    console.log("current city:", currentCity);
+    atlantaButton.classList.remove('is-primary');
+    houstonButton.classList.remove('is-primary');
+    seattleButton.classList.remove('is-primary');
+    tampaButton.classList.add('is-primary');
+    getWeather(currentCity);
+    document.getElementById('weatherHeader').style.display = "block";
+});
+
 // ********** ********** Get Events Data ********** **********
-
-
 
 // Concert Data
 const getConcerts = (currentCity) => {
@@ -84,12 +112,11 @@ const getCommunity = (currentCity) => {
     });
 };
 
-
 // Festivals Data
 const getFestivals = (currentCity) => {
     const festivalsURL = `https://api.predicthq.com/v1/events/?category=festivals&active.gte=2020-08-27`;
     get(festivalsURL).then(function(fetchResponse) {
-        console.log("festivals", fetchResponse);
+        console.log("Festivals", fetchResponse);
     });
 };
 
@@ -100,7 +127,6 @@ const getPerformingArts = (currentCity) => {
         console.log("Performing-Arts", fetchResponse);
     });
 };
-
 
 // Craft Beer Data
 const getBreweries = (currentCity) => {

@@ -15,7 +15,7 @@
         <div class="container">
             <div class="navbar-brand">
             <a class="navbar-item">
-                <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
+                <img src="favicon.ico" alt="TO-DAY Logo">
             </a>
             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                 <span></span>
@@ -24,17 +24,17 @@
             </span>
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item is-active">
-                Home
-                </a>
-                <a class="navbar-item">
-                Atlanta (placeholder)
-                </a>
-                <a class="navbar-item">
-                Houston (placeholder)
-                </a>
-            </div>
+                <div class="navbar-end">
+                    <a class="navbar-item is-active">
+                        Home
+                    </a>
+                    <a class="navbar-item">
+                        Atlanta (placeholder)
+                    </a>
+                    <a class="navbar-item">
+                        Houston (placeholder)
+                    </a>
+                </div>
             </div>
         </div>
         </nav>
@@ -65,14 +65,29 @@
         </div>
     </section> -->
 
-    <!-- Weather Data-->
-    <section class="section">
-        <div class="container" id="weatherHeader">
-            <h1 class="title">Local Weather</h1>
-            <p class="content" id="weatherTemp"></p>
-            <p class="content" id="weatherFeelsLikeTemp"></p>
-            <p class="content" id="weatherHumid"></p>
-            <p class="content" id="weatherWind"></p>
+    <!-- Site Description and Weather Block -->
+    <section class= "section">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <div class="content">
+                    <h4>
+                        To-Do Today helps you find events to-do, Today!
+                    </h4>
+                    <p>
+                        Selecting from the available cities will show todays weather and a list of local events. Select categories to add or remove events of interest.
+                    </p>
+                </div>
+            </div>
+            <!-- Weather Data-->
+            <div class="column" id="weatherHeader">
+                <div class="content">
+                    <h3 id="weatherTitle">Local Weather</h3>
+                    <p class="content" id="weatherTemp"></p>
+                    <p class="content" id="weatherFeelsLikeTemp"></p>
+                    <p class="content" id="weatherHumid"></p>
+                    <p class="content" id="weatherWind"></p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -82,6 +97,8 @@
             <div class="buttons has-addons is-centered">
                 <button class="button" id="atlantaButton">Atlanta</button>
                 <button class="button" id="houstonButton">Houston</button>
+                <button class="button" id="seattleButton">Seattle</button>
+                <button class="button" id="tampaButton">Tampa</button>
             </div>
         </div>
     </section>
