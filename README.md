@@ -1,7 +1,3 @@
-# DC-FrontEnd-Project
-DC July 2020 Front End Project: Dylan, Matthew, Justin, Harmony
-
-
 <h1>TO-DO TODAY<h1>
 
 <img src="images/To-Do_Today_Logo.png">
@@ -98,16 +94,12 @@ DC July 2020 Front End Project: Dylan, Matthew, Justin, Harmony
 <h2><u>Challenges & Solutions:</u><h2>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 
-<b>Challenge:</b>Add
-</br>
+<b>Challenge:</b>Add</br>
 <b>Solution:</b>Add</br>
 <b>Challenge:</b> Add </br>
-</br>
 <b>Solution:</b> Add</br>
 <b>Challenge:</b> Add </br>
-</br>
 <b>Solution:</b> Add </br>
-</br>
 
 <h2><u>Code Snippets:</u></h2>
 
@@ -119,9 +111,8 @@ Add
 </br>
 
 <h2>Screenshots:</h2>
-<img src="add" alt="">
+
 <h4>Sub-heading</h4>
-<br />
-<img src="add" alt="d">
+
 
        
