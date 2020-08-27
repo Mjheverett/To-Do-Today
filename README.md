@@ -1,7 +1,3 @@
-# To-Do-Today
-DC July 2020 Front End Project: Dylan, Matthew, Justin, Harmony
-
-
 <h1>TO-DO TODAY<h1>
 
 <img src="images/To-Do_Today_Logo.png">
@@ -122,6 +118,6 @@ Add
 <img src="add" alt="">
 <h4>Sub-heading</h4>
 <br />
-<img src="add" alt="d">
+<img src="" alt="d">
 
        
