@@ -169,8 +169,8 @@ const getCommunity = (currentCity) => {
         communityData.results.map(function(community) {    
             const communityList = document.getElementById('communityList');
             const communityListName = document.createElement('li');
-            communityListName.innerText = sport.title;
-            sportList.appendChild(sportListName);
+            communityListName.innerText = community.title;
+            communityList.appendChild(communityListName);
         })
     });
 };
@@ -199,6 +199,18 @@ const getFestivals = (currentCity) => {
 };
 
 // Performing-arts
+const getPerformingArts = (currentCity) => {
+    const performingArtsURL = `https://api.predicthq.com/v1/events/?active.gte=2020-08-27&category=performing-arts&offset=10&place=${currentCity}`;
+    document.getElementById('performing-artsList').innerHTML = '';
+    getPredict(performingArtsURL).then(function(performingArtsData) {
+        performingArtsData.results.map(function(performingArts) {    
+            const performingArtsList = document.getElementById('performing-artsList');
+            const performingArtsListName = document.createElement('li');
+            performingArtsListName.innerText = performingArts.title;
+            performingArtsList.appendChild(performingArtsListName);
+        })
+    });
+};
 
 
 // Craft Beer Data
