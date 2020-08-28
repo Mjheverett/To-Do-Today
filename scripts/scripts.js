@@ -1,6 +1,7 @@
 'use strict'
 
 let currentCity = '';
+let categorySelections = [];
 const atlantaButton = document.getElementById('atlantaButton');
 const houstonButton = document.getElementById('houstonButton');
 const seattleButton = document.getElementById('seattleButton');
@@ -14,6 +15,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     document.getElementById('weatherHeader').style.display = "none";
     // document.getElementById('eventsColumns').style.display = "none";
+
+    //generate categorySelections variable to pass into getEvents if no buttons clicked
+    categorySelection();
+    console.log('category selections', categorySelections);
 
     // Display's Current Date
     function displayDate(){
@@ -40,34 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(year);
     }
     displayDate();
-    
 });
-
-// Initialize all div with carousel class
-var carousels = bulmaCarousel.attach('.hero-carousel', {
-    slidesToScroll: 1,
-    SlidesToShow: 1,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3500,
-});
-
-// Loop on each carousel initialized
-for(var i = 0; i < carousels.length; i++) {
-	// Add listener to  event
-	carousels[i].on('before:show', state => {
-		// console.log(state);
-	});
-}
-
-// Access to bulmaCarousel instance of an element
-var element = document.querySelector('#my-element');
-if (element && element.bulmaCarousel) {
-	// bulmaCarousel instance is available as element.bulmaCarousel
-	element.bulmaCarousel.on('before-show', function(state) {
-		console.log(state);
-	});
-}
 
 // Get weather data for selected city
 const getWeather = (currentCity) => {
@@ -146,8 +124,8 @@ const getEventsData = (currentCity) => {
     const festivals = getFestivals(currentCity);
     const performing = getPerformingArts(currentCity);
     const breweries = getBreweries(currentCity);
-    const categoriesSelected = [breweries, community, concerts, expos, festivals, performing, sports];
-    Promise.all(categoriesSelected)
+    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports];
+    Promise.all(selectCategories)
     .then(result => {
         // console.log("promise all results", result) // 'two'
         const eventsList = result.flat();
@@ -300,13 +278,51 @@ const getBreweries = (currentCity) => {
 };
 
 //check boxes
-let resultButton = document.getElementById('resultButton');
-let result = document.getElementById('resultPlaceholder');
-
-resultButton.addEventListener('click', () => {
-    let checkbox = document.querySelector('input[type="checkbox"]:checked')
-    console.log(alert, "buttonclicked");
-    result.innerText = checkbox.value;
+document.querySelectorAll('#eventSelect').forEach(item => {
+    item.addEventListener('click', () => {
+        console.log("item", item.value);
+        categorySelection();
+    })
 });
 
-//back up APIs
+const categorySelection = () => {
+    categorySelections = [];
+    let categoryStrings = [];
+    const checkboxes = document.querySelectorAll('#eventSelect');
+    checkboxes.forEach(item => {
+        // console.log(item);
+        if (item.checked == true) {
+            categoryStrings = [...categoryStrings, item.value];
+        }
+        return categoryStrings;
+    });
+    console.log("category strings", categoryStrings);
+    categoryStrings.forEach((value) => {
+        switch(value) {
+            case "breweries":
+                categorySelections = [...categorySelections, breweries];
+                break;
+            case "community":
+                categorySelections = [...categorySelections, community];
+                break;
+            case "concerts":
+                categorySelections = [...categorySelections, concerts];
+                break;
+            case "expos":
+                categorySelections = [...categorySelections, expos];
+                break;
+            case "festivals":
+                categorySelections = [...categorySelections, festivals];
+                break;
+            case "performing":
+                categorySelections = [...categorySelections, performing];
+                break;
+            case "sports":
+                categorySelections = [...categorySelections, sports];
+                break;
+        }
+    });
+    return categorySelections;
+}
+
+// function defined variables to pass into getEventsData are not defined when call in switch statement. Fix hoisting issue.
