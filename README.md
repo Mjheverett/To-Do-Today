@@ -3,7 +3,7 @@
 <img src="images/To-Do_Today_Logo.png">
 
 <h2><u>Overview:</u><h2>
-<h4>Description of project............</h4>
+<b>To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</b>
 
 </br>
 
@@ -52,10 +52,8 @@
 
 <h3>APIs</h3>
 <ul>
-    <li>Google (GeoCode, Maps)</li>
-    <li>Add</li>
-    <li>Add</li>
-    <li>Add</li>
+    <li>OpenWeatherMap</li>
+    <li>PredictHQ</li>
 </ul
 
 <h3>Other:</h3>
@@ -68,20 +66,20 @@
 
 <h2><u>MVP (Minimum Viable Product):</u></h2>
 <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>Provide weather and local events</li>
+    <li>Select from listed cities (DigitalCrafts cities)</li>
+    <li>Mobile-first development</li>
+    <li>Category selections</li>
+    <li>Useful and informative, more than just a list</li>
 </ul>
 
 </br>
 
 <h2><u>Stretch Goals Completed</u></h2>
 <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>Organized, sorted information</li>
+    <li>Additional preferences selections</li>
+    <li>Focused recommendations</li>
 </ul>
 
 <h2><u>Stretch Goals Future</u></h2>
