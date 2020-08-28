@@ -13,7 +13,8 @@
 
     <!-- CSS Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css" rel="stylesheet">
-    <link href="styles/bulma-carousel.min.css" rel="stylesheet">
+    <!-- <link href="styles/bulma-carousel.min.css" rel="stylesheet"> -->
+    <link href="styles/carousel.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -54,34 +55,59 @@
     </div>
 
     <!-- Start Hero Carousel -->
-    <section class="hero is-medium has-carousel">
-        <div id="carousel-images" class="hero-carousel">
-            <div class="item-1">
-                <figure class="image">
-                    <img src="images/brewery.jpg">
-                </figure>
+    <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide">
+            <div class="carousel__snapper">
+                <a href="#carousel__slide4"
+                class="carousel__prev"></a>
+                    <figure class="image">
+                        <img src="images/Carousel_Atlanta.png">
+                    </figure>
+                <a href="#carousel__slide2"
+                class="carousel__next"></a>
             </div>
-            <div class="item-2">
-                <figure class="image">
-                    <img src="images/carnival.jpeg">
-                </figure>
-            </div>
-            <div class="item-3">
-                <figure class="image">
-                    <img src="images/colorRun.jpeg">
-                </figure>
-            </div>
-            <div class="item-4">
-                <figure class="image">
-                    <img src="images/concert.jpeg">
-                </figure>
-            </div>
-        </div>
-        <div class="hero-head"></div>
-        <div class="hero-body"></div>
-        <div class="hero-foot"></div>
+            </li>
+            <li id="carousel__slide2"
+                tabindex="0"
+                class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide1"
+                class="carousel__prev"></a>
+                    <figure class="image">
+                        <img src="images/Carousel_Houston.png">
+                    </figure>
+            <a href="#carousel__slide3"
+                class="carousel__next"></a>
+            </li>
+            <li id="carousel__slide3"
+                tabindex="0"
+                class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide2"
+                class="carousel__prev"></a>
+                    <figure class="image">
+                        <img src="images/Carousel_Seattle.png">
+                    </figure>
+            <a href="#carousel__slide4"
+                class="carousel__next"></a>
+            </li>
+            <li id="carousel__slide4"
+                tabindex="0"
+                class="carousel__slide">
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide3"
+                class="carousel__prev"></a>
+                    <figure class="image">
+                        <img src="images/Carousel_Tampa.png">
+                    </figure>
+            <a href="#carousel__slide1"
+                class="carousel__next"></a>
+            </li>
+        </ol>
     </section>
-    <!-- End Hero Carousel -->
 
     <!-- Hero Image -->
     <section class="hero is-info is-small">
@@ -93,20 +119,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Breadcrumb 
-    <section class="section">
-        <div class="container">
-            <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
-                <ul>
-                    <li><a href="#">TBD</a></li>
-                    <li><a href="#">TBD</a></li>
-                    <li><a href="#">TBD</a></li>
-                    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section> -->
 
     <!-- Site Description and Weather Block -->
     <section class= "section">
@@ -134,7 +146,7 @@
         </div>
     </section>
 
-    <!-- Button -->
+    <!-- City Button -->
     <section class="section">
         <div class="container">
             <div class="buttons has-addons is-centered">
@@ -171,7 +183,7 @@
         </div>
     </section>
 
-    <!-- Dashboard -->
+    <!-- Events Dashboard -->
     <div class="section">
         <div class="columns" id="eventsColumns">
             <div class="column">
@@ -183,8 +195,11 @@
                     </div>
                     <div class="level-right">
                         <div class="level-item">
+                             <button type="button" class="button is-small" id="day">
+                                Add day here....
+                            </button>                       
                             <button type="button" class="button is-small" id="date">
-
+                                Add date here....
                             </button>
                         </div>
                     </div>
@@ -310,9 +325,11 @@
     </footer>
 
 </body>
+
 <!-- JS Scripts -->
 <script src="scripts/bulma-carousel.min.js"></script>
 <script src="scripts/get.js"></script>
 <script src="scripts/getPredict.js"></script>
 <script src="scripts/scripts.js"></script>
+
 </html>
