@@ -282,6 +282,7 @@ document.querySelectorAll('#eventSelect').forEach(item => {
     item.addEventListener('click', () => {
         console.log("item", item.value);
         categorySelection();
+        getEventsData();
     })
 });
 
