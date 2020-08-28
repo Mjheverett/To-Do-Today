@@ -1,22 +1,16 @@
-/* Google Fonts */
-
-html {
-  font-family: 'Raleway', sans-serif;
-  font-family: 'Roboto', sans-serif;
-}
-
 .hero.is-info {
-  background-color: #0B2531;
-  color: #fff;
+    background-color: rgb(60,88, 109);
+    color: #fff;
 }
 
 .button.is-primary {
-  background-color: #E58946;
-  border-color: transparent;
-  color: #fff;
+    background-color: #E58946;
+    border-color: transparent;
+    color: #fff;
 }
 
 .button.is-primary:hover, .button.is-primary.is-hovered {
-  background-color: #E58946;
-  border-color: transparent;
-  color: #fff;
+    background-color: #E58946;
+    border-color: transparent;
+    color: #fff;
+}
