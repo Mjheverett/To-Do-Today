@@ -14,7 +14,7 @@
     <!-- CSS Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css" rel="stylesheet">
     <link href="styles/bulma-carousel.min.css" rel="stylesheet">
-    <link href="styles/bulma-styles.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -47,6 +47,13 @@
                     <a class="navbar-item">
                         Houston (placeholder)
                     </a>
+                    <a class="navbar-item">
+                        Seattle (placeholder)
+                    </a>
+                    <a class="navbar-item">
+                        Tampa (placeholder)
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -63,17 +70,17 @@
             </div>
             <div class="item-2">
                 <figure class="image">
-                    <img src="images/carnival.jpeg">
+                    <img src="images/brewery.jpg">
                 </figure>
             </div>
             <div class="item-3">
                 <figure class="image">
-                    <img src="images/colorRun.jpeg">
+                    <img src="images/brewery.jpg">
                 </figure>
             </div>
             <div class="item-4">
                 <figure class="image">
-                    <img src="images/concert.jpeg">
+                    <img src="images/brewery.jpg">
                 </figure>
             </div>
         </div>
@@ -94,19 +101,6 @@
         </div>
     </section>
 
-    <!-- Breadcrumb 
-    <section class="section">
-        <div class="container">
-            <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
-                <ul>
-                    <li><a href="#">TBD</a></li>
-                    <li><a href="#">TBD</a></li>
-                    <li><a href="#">TBD</a></li>
-                    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section> -->
 
     <!-- Site Description and Weather Block -->
     <section class= "section">
@@ -153,21 +147,35 @@
         </div>
         <div class="container" id="eventTypeCheckboxes">
             <label class="checkbox">
-                <input type="checkbox" id="concertSelect">
+                <input type="checkbox" id="eventSelect" value="concerts" checked>
                 Concerts
             </label>
             <label class="checkbox">
-                <input type="checkbox" id="sportsSelect">
+                <input type="checkbox" id="eventSelect" value="sports" checked>
                 Sporting Events
             </label>
             <label class="checkbox">
-                <input type="checkbox" id="beerSelect">
-                Craft Beer and Cider
+                <input type="checkbox" id="eventSelect" value="expos" checked>
+                Expos
             </label>
             <label class="checkbox">
-                <input type="checkbox" id="communitySelect">
+                <input type="checkbox" id="eventSelect" value="communiyEvents" checked>
                 Community Events
             </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="festivals" checked>
+                Festivals
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="performing-arts" checked>
+                Performing Arts
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="breweries" checked>
+                Craft Beer and Cider
+            </label>
+            
+           
         </div>
     </section>
 
@@ -192,91 +200,22 @@
             </div>
         </div>
 
-        <div class="columns is-multiline">
-            <div class="column">
-                <div class="box">
-                    <div class="heading">Concerts</div>
-                    <div class="content">
-                        <ul id="concertsList"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="box">
-                    <div class="heading">Breweries</div>
-                    <div class="content">
-                        <ul id="breweriesList"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="box">
-                    <div class="heading">Festivals</div>
-                    <div class="content">
-                        <ul id="festivalsList"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="box">
-                    <div class="heading">Sports</div>
-                    <div class="content">
-                        <ul id="sportsList"></ul>
-                    </div>
-                </div>
-            </div>
+        <div class="columns flex-wrapped" id="eventsContainer">
+            <!-- getEventsData adds events here -->
         </div>
-            
-        <div class="columns is-multiline">
-            <div class="column is-6">
-                <div class="panel">
-                    <p class="panel-heading">
-                    </p>
-                    <div class="panel-block">
-                    <figure class="image is-16x9">
-                    <!-- <img src="1280x720"> -->
-                    </figure>
-                    </div>
-                </div>
+
+        <!-- <div class="tile is-ancestor flex-wrapped">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <p class="heading">One</p>
+                </article>
             </div>
-            <div class="column is-6">
-                <div class="panel">
-                    <p class="panel-heading">
-                    </p>
-                    <div class="panel-block">
-                    <figure class="image is-16x9">
-                    <!-- <img src="1280x720"> -->
-                    </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-6">
-                <div class="panel">
-                    <p class="panel-heading">
-                    </p>
-                    <div class="panel-block">
-                    <figure class="image is-16x9">
-                    <!-- <img src="1280x720"> -->
-                    </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-6">
-                <div class="panel">
-                    <p class="panel-heading">
-                    </p>
-                    <div class="panel-block">
-                    <figure class="image is-16x9">
-                    <!-- <img src="1280x720"> -->
-                    </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
+            add more tiles here
+        </div> -->
     </div>
     
     <!-- Page Toggle -->
-    <section class="section">
+    <!-- <section class="section">
         <div class="container">
             <nav class="pagination" role="navigation" aria-label="pagination">
                 <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
@@ -294,7 +233,7 @@
                     </ul>
             </nav>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer-->
     <footer class="footer">
