@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // Initialize all div with carousel class
 var carousels = bulmaCarousel.attach('.hero-carousel', {
-    slidesToScroll: 1,
-    SlidesToShow: 1,
+    navigation: false,
+    navigationKeys: false,
+    slidesToShow: 1,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3500,
