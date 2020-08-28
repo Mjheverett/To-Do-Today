@@ -980,13 +980,13 @@ html {
   }
   
   .button.is-primary {
-    background-color: #E58946;
+    background-color: rgb(217, 140, 83);
     border-color: transparent;
     color: #fff;
   }
   
   .button.is-primary:hover, .button.is-primary.is-hovered {
-    background-color: #E58946;
+    background-color: rgb(217, 140, 83);
     border-color: transparent;
     color: #fff;
   }
@@ -11035,7 +11035,7 @@ html {
   
   /* USED: */
   .hero.is-info {
-    background-color: #0B2531;
+    background-color: rgb(60,88, 109);
     color: #fff;
   }
   

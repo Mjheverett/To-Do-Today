@@ -146,9 +146,34 @@ const getSports = (currentCity) => {
 };
 
 // Expos Data
+const getExpos = (currentCity) => {
+    const expoURL = `https://api.predicthq.com/v1/events/?active.gte=2020-08-27&category=expos&offset=10&place=${currentCity}`;
+    document.getElementById('exposList').innerHTML = '';
+    getPredict(expoURL).then(function(expoData) {
+        expoData.results.map(function(expo) {    
+            const expoList = document.getElementById('exposList');
+            const expoListName = document.createElement('li');
+            expoListName.innerText = expo.title;
+            expoList.appendChild(exposListName);
+        })
+    });
+};
+
 
 
 // Community Data
+const getCommunity = (currentCity) => {
+    const communityURL = `https://api.predicthq.com/v1/events/?active.gte=2020-08-27&category=community&offset=10&place=${currentCity}`;
+    document.getElementById('communityList').innerHTML = '';
+    getPredict(communityURL).then(function(communityData) {
+        communityData.results.map(function(community) {    
+            const communityList = document.getElementById('communityList');
+            const communityListName = document.createElement('li');
+            communityListName.innerText = sport.title;
+            sportList.appendChild(sportListName);
+        })
+    });
+};
 
 
 // Festivals Data
