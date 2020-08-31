@@ -120,20 +120,20 @@
         </div>
         <div class="container" id="eventTypeCheckboxes">
             <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="community" checked>
+                Community Events
+            </label>
+            <label class="checkbox">
                 <input type="checkbox" id="eventSelect" value="concerts" checked>
                 Concerts
             </label>
             <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="sports" checked>
-                Sporting Events
+                <input type="checkbox" id="eventSelect" value="breweries" checked>
+                Craft Beer and Cider
             </label>
             <label class="checkbox">
                 <input type="checkbox" id="eventSelect" value="expos" checked>
                 Expos
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="community" checked>
-                Community Events
             </label>
             <label class="checkbox">
                 <input type="checkbox" id="eventSelect" value="festivals" checked>
@@ -144,36 +144,27 @@
                 Performing Arts
             </label>
             <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="breweries" checked>
-                Craft Beer and Cider
+                <input type="checkbox" id="eventSelect" value="sports" checked>
+                Sporting Events
             </label>
         </div>
     </section>
 
     <!-- Dashboard -->
-    <div class="section">
-        <div class="columns" id="eventsColumns">
-            <div class="column">
-                <div class="level">
-                    <div class="level-left">
-                        <div class="level-item">
-                            <div class="title"></div>
-                        </div>
-                    </div>
-                    <div class="level-right">
-                        <div class="level-item">
-                            <button type="button" class="button is-small" id="date">
-
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <div class="section date-label">
+        <div class="level-right">
+            <div class="level-item">
+                <button type="button" class="button is-small" id="date">
+                </button>
             </div>
         </div>
+    </div>
 
+    <section class="section">
         <div class="columns flex-wrapped" id="eventsContainer">
             <!-- getEventsData adds events here -->
         </div>
+    </section>
 
         <!-- <div class="tile is-ancestor flex-wrapped">
             <div class="tile is-parent">

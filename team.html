@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TO-DO TODAY</title>
+    <title>TO-DO TODAY | Team</title>
 
     <!-- Tab Icon-->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
@@ -13,29 +13,29 @@
 
     <!-- CSS Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css" rel="stylesheet">
-    <link href="styles/styles.css" rel="stylesheet">
+    <link href="/styles/styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
 
 </head>
-<body id="top">
+<body class="has-navbar-fixed-top" id="top">
     <!-- Navbar -->
     <div class="hero-head">
-        <nav class="navbar">
-        <div class="container">
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-            <a class="navbar-item">
-                <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
-            </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+                <a class="navbar-item" href="index.html">
+                    <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-menu" id="navbarMenuHeroA" >
                 <div class="navbar-end">
                     <a class="navbar-item is-active">
                         Home
@@ -52,10 +52,8 @@
                     <a class="navbar-item">
                         Tampa
                     </a>
-
                 </div>
             </div>
-        </div>
         </nav>
     </div>
 
@@ -70,53 +68,85 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Find local events to-do, Today!
+                    Meet the To-Do Today Team!
                 </h1>
             </div>
         </div>
     </section>
 
-    <article class="media">
-        <figure class="media-left">
-            <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-            </p>
-            </figure>
-            <div class="media-content">
-            <div class="content">
-                <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-                </p>
-            </div>
-            <nav class="level is-mobile">
-                <div class="level-left">
-                <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                </a>
-                <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                </a>
-                <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                </a>
-                </div>
-            </nav>
-            </div>
-            <div class="media-right">
-            <button class="delete"></button>
+    <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure>
         </div>
-    </article>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Dylan Cooper</p>
+            </div>
+          </div>
+      
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <span>
+                View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+              </span>
+            </p>
+            <p class="card-footer-item">
+              <span>
+                Connect with on <a href="https://www.linkedin.com/in/dylan-cooper-3a7b44197/">LinkedIn</a>
+              </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+
+    <!-- Dashboard -->
+    <div class="section">
+        <div class="level-right">
+            <div class="level-item">
+                <button type="button" class="button is-small">
+                    <a href="https://github.com/Mjheverett/To-Do-Today">View Project on GitHub</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="columns flex-wrapped" id="eventsContainer">
+            <!-- getEventsData adds events here -->
+        </div>
+    </section>
+
+        <!-- <div class="tile is-ancestor flex-wrapped">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <p class="heading">One</p>
+                </article>
+            </div>
+            add more tiles here
+        </div> -->
+    </div>
+
 
     <!-- Footer-->
     <footer class="footer">
         <div class="content has-text-centered">
+            <p> 
+                Check back for additional cities soon!
+            </p>
             <br>
             <p>
                 <strong>Built</strong> by <a href="https://github.com/Mjheverett/To-Do-Today">Dylan Cooper, Matthew Everett, Justin Gardner and Harmony Trevena</a>.
                 <br></br>
-                <a href="index.html">HOME</a>
+                <a href="team.html">The TEAM</a>
                 <br></br>
                 <a href="#top">Back to top</a>
             </p>
@@ -125,9 +155,8 @@
 
 </body>
 <!-- JS Scripts -->
-<script src="scripts/bulma-carousel.min.js"></script>
-<script src="scripts/get.js"></script>
-<script src="scripts/getPredict.js"></script>
-<script src="scripts/getDate.js"></script>
-<script src="scripts/scripts.js"></script>
+<script src="/scripts/get.js"></script>
+<script src="/scripts/getPredict.js"></script>
+<script src="/scripts/getDate.js"></script>
+<script src="/scripts/scripts.js"></script>
 </html>
