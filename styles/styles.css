@@ -1,16 +1,83 @@
+/* Dark Blue #0b2531 */
+/* Medium Blue #34596F */
+/* Light Blue #74919F */
+/* Grey #A4AAAD */
+/* Dark Orange #D16535 */
+/* Orange #E58946 */
+/* Red #E0563b*/
+
+
+html {
+    background-color:#0b2531;
+    color: white;
+}
+
+body {
+    background-color:#0b2531;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif, "Raleway";
+    font-size: 100%;
+    font-weight: normal;
+    color: white;
+}
+
+p {
+    font-family: sans-serif, "Roboto";
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: #D16535;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.navbar {
+    background-color:#0b2531;
+}
+
+a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
+    background-color: #34596f;
+    color: #E58946;
+    border-radius: 2px;
+}
+
+.navbar-item, .navbar-link {
+    color: white;
+}
+
 .hero.is-info {
-    background-color: rgb(60,88, 109);
-    color: #fff;
+    background-color:#34596f;
+    color: rgb(216, 216, 216);
 }
 
 .button.is-primary {
-    background-color: rgb(217, 140, 83);
+    background-color:#E58946;
     border-color: transparent;
     color: #fff;
 }
 
+.button {
+    background-color: #34596f;
+    border-color: #34596f;
+    color: #fff;
+}
+
+.button:active, .button.is-active, .button:hover, .button.is-hovered {
+    border-color: #34596f;
+    color: #E58946;
+}
+
+.button:focus, .button.is-focused {
+    border-color: #34596f;
+    color: #E58946;
+}
+
 .button.is-primary:hover, .button.is-primary.is-hovered {
-    background-color: rgb(217, 140, 83);
+    background-color:#E58946;
     border-color: transparent;
     color: #fff;
 }
@@ -20,5 +87,9 @@
 }
 
 .content {
-   color: rgb(12, 61, 120);
+    color: white;
+}
+
+.footer {
+    background-color:#0b2531;
 }
