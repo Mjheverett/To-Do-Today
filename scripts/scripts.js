@@ -150,7 +150,8 @@ const getEventsData = (currentCity, apiDate) => {
     const festivals = getFestivals(currentCity, apiDate);
     const performing = getPerformingArts(currentCity, apiDate);
     const breweries = getBreweries(currentCity);
-    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports];
+    const ticketMaster = getTM(currentCity, apiDate);
+    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports, ticketMaster];
     if (currentCity != '') {
         Promise.all(selectCategories)
         .then(result => {
@@ -222,7 +223,7 @@ const getBreweries = (currentCity) => {
                 const breweryListName = [brewery.name, brewery.website_url];
                 breweryShuffle = [...breweryShuffle, breweryListName];
                 breweryList = shuffle(breweryShuffle);
-                breweryList = breweryList.slice(0, 5);
+                // breweryList = breweryList.slice(0, 5);
                 return breweryList;
             })
             // console.log("brewery list array", breweryList);
@@ -335,6 +336,22 @@ const getSports = (currentCity, apiDate) => {
             return sportList;
         };
         return sportList;
+    });
+};
+
+// TicketMaster Data
+const getTM = (currentCity, apiDate) => {
+    const TMURL = `https://app.ticketmaster.com/discovery/v2/events.json?city=${currentCity}&startDateTime=${apiDate}T00:00:01Z&endDateTime=${apiDate}T23:59:59Z&apikey=3jrOvprvSgpAYZf10QxR812G8GH88Bvn`;
+    return get(TMURL).then(function(TMData) {
+        console.log("ticket master JSON", TMData);
+        let TMList = [];
+        TMData._embedded.events.map(function(TM) {    
+            const TMListName = [TM.name, TM.url];
+            TMList = [...TMList, TMListName];
+            return TMList;
+        })
+        console.log("ticket master list array", TMList);
+        return TMList;
     });
 };
 
