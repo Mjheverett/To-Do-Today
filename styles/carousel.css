@@ -30,7 +30,7 @@
   
   @keyframes snap {
     96% {
-      scroll-snap-align: center;
+      scroll-snap-align: start
     }
     97% {
       scroll-snap-align: none;
@@ -39,13 +39,13 @@
       scroll-snap-align: none;
     }
     100% {
-      scroll-snap-align: center;
+      scroll-snap-align: end;
     }
   }
   
   * {
     box-sizing: border-box;
-    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-color: transparent transparent;
     scrollbar-width: 0px;
   }
   
@@ -76,6 +76,7 @@
   .carousel {
     position: relative;
     padding-top: calc(590/2000 * 100%);
+    perspective: 100px
   }
   
   :focus {
@@ -90,7 +91,6 @@
     left: 0;
     display: flex;
     overflow-x: scroll;
-    counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
   }
@@ -99,7 +99,6 @@
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    counter-increment: item;
   }
   
   #carousel__slide1 {
@@ -114,7 +113,7 @@
     background-color:#fff;
   }
   
-  #carousel__slide4 {
+  #carousel__slide4:last-child {
     background-color:#fff;
   }
   
@@ -152,36 +151,31 @@
     }
   }
   
-  .carousel:hover .carousel__snapper,
+  /* .carousel:hover .carousel__snapper,
   .carousel:focus-within .carousel__snapper {
     animation-name: none;
-  }
+  } */
   
-  .carousel__navigation {
+  /* .carousel__navigation {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-  }
+  } */
   
-  .carousel__navigation-list,
+  /* .carousel__navigation-list,
   .carousel__navigation-item {
     display: inline-block;
-  }
+  } */
   
-  .carousel__navigation-button {
-    display: inline-block;
-    transition: transform 0.1s;
-  }
-  
-  .carousel::before,
+  /* .carousel::before,
   .carousel::after,
   .carousel__prev,
   .carousel__next {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
-  }
+  } */
   
   .carousel::before,
   .carousel__prev {
@@ -195,8 +189,15 @@
   
   .carousel::before,
   .carousel::after {
-    z-index: 1;
     background-repeat: no-repeat;
     background-position: center center;
     pointer-events: none;
   }
+
+  /* .carousel::before {
+    background-image: url("images/Carousel_Atlanta.png");
+  }
+  
+  .carousel::after {
+    background-image: url("images/Carousel_Atlanta.png");
+  } */
