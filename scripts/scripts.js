@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         // Use for Date and Year in API
         apiDate = String(year + '-' + thisMonth + '-' + date);
-        console.log("apiDate:", apiDate);
+        // console.log("apiDate:", apiDate);
         return apiDate;
     }
     displayDate();
-    console.log("apiDate in DOM events", apiDate);
+    // console.log("apiDate in DOM events", apiDate);
 });
 
 // ********** ********** City Button Event Listeners ********** **********
