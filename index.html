@@ -20,48 +20,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="has-navbar-fixed-top" id="top">
     <!-- Navbar -->
     <div class="hero-head">
-        <nav class="navbar">
-        <div class="container">
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-            <a class="navbar-item">
-                <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
-            </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+                <a class="navbar-item" href="index.html">
+                    <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-menu" id="navbarMenuHeroA" >
                 <div class="navbar-end">
                     <a class="navbar-item is-active">
                         Home
                     </a>
                     <a class="navbar-item">
-                        Atlanta (placeholder)
+                        Atlanta
                     </a>
                     <a class="navbar-item">
-                        Houston (placeholder)
+                        Houston
                     </a>
                     <a class="navbar-item">
-                        Seattle (placeholder)
+                        Seattle
                     </a>
                     <a class="navbar-item">
-                        Tampa (placeholder)
+                        Tampa
                     </a>
-
                 </div>
             </div>
-        </div>
         </nav>
     </div>
 
     <div class="item-1">
         <figure class="image">
-            <img src="images/brewery.jpg">
+            
         </figure>
     </div>
 
@@ -92,7 +90,7 @@
             </div>
             <!-- Weather Data-->
             <div class="column" id="weatherHeader">
-                <div class="content">
+                <div class="content has-text-right">
                     <h3 id="weatherTitle">Local Weather</h3>
                     <p class="content" id="weatherTemp"></p>
                     <p class="content" id="weatherFeelsLikeTemp"></p>
@@ -212,19 +210,23 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p> 
-                <strong> Check back for additional cities soon! </strong>
+                Check back for additional cities soon!
             </p>
             <br>
             <p>
                 <strong>Built</strong> by <a href="https://github.com/Mjheverett/To-Do-Today">Dylan Cooper, Matthew Everett, Justin Gardner and Harmony Trevena</a>.
+                <br></br>
+                <a href="team.html">The TEAM</a>
+                <br></br>
+                <a href="#top">Back to top</a>
             </p>
         </div>
     </footer>
 
 </body>
 <!-- JS Scripts -->
-<script src="scripts/bulma-carousel.min.js"></script>
 <script src="scripts/get.js"></script>
 <script src="scripts/getPredict.js"></script>
+<script src="scripts/getDate.js"></script>
 <script src="scripts/scripts.js"></script>
 </html>
