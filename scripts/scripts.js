@@ -12,7 +12,28 @@ const tampaButton = document.getElementById('tampaButton');
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     document.getElementById('weatherHeader').style.display = "none";
-    // document.getElementById('eventsColumns').style.display = "none";
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+            });
+        });
+    }
 
     //generate categorySelections variable to pass into getEvents if no buttons clicked
     categorySelection();
@@ -193,10 +214,13 @@ const getBreweries = (currentCity) => {
     const breweryURL = `https://api.openbrewerydb.org/breweries?by_city=${currentCity}`;
     return get(breweryURL).then(function(breweryData) {
         let breweryList = [];
+        let breweryShuffle = [];
         if (categorySelections.includes("breweries")) {
             breweryData.map(function(brewery) {
                 const breweryListName = brewery.name;
-                breweryList = [...breweryList, breweryListName];
+                breweryShuffle = [...breweryShuffle, breweryListName];
+                breweryList = shuffle(breweryShuffle);
+                breweryList = breweryList.slice(0, 5);
                 return breweryList;
             })
             // console.log("brewery list array", breweryList);

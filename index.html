@@ -20,22 +20,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
 
 </head>
-<body id="top">
+<body class="has-navbar-fixed-top" id="top">
     <!-- Navbar -->
     <div class="hero-head">
-        <nav class="navbar">
-        <div class="container">
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-            <a class="navbar-item">
-                <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
-            </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+                <a class="navbar-item" href="index.html">
+                    <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-menu" id="navbarMenuHeroA" >
                 <div class="navbar-end">
                     <a class="navbar-item is-active">
                         Home
@@ -52,10 +52,8 @@
                     <a class="navbar-item">
                         Tampa
                     </a>
-
                 </div>
             </div>
-        </div>
         </nav>
     </div>
 
@@ -92,7 +90,7 @@
             </div>
             <!-- Weather Data-->
             <div class="column" id="weatherHeader">
-                <div class="content">
+                <div class="content has-text-right">
                     <h3 id="weatherTitle">Local Weather</h3>
                     <p class="content" id="weatherTemp"></p>
                     <p class="content" id="weatherFeelsLikeTemp"></p>
@@ -227,7 +225,6 @@
 
 </body>
 <!-- JS Scripts -->
-<script src="scripts/bulma-carousel.min.js"></script>
 <script src="scripts/get.js"></script>
 <script src="scripts/getPredict.js"></script>
 <script src="scripts/getDate.js"></script>
