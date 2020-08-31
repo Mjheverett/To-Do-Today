@@ -15,6 +15,8 @@ html {
 body {
     background-color:#0b2531;
     color: white;
+    max-width: 1100px;
+    margin: 0px auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +37,18 @@ p {
     font-family: sans-serif, "Raleway";
 }
 
+/* .event-box is text inside the event elements */
+.event-box {
+    font-family: sans-serif, "Roboto";
+    font-size: 100%;
+    font-weight: normal;
+    width: 100%;
+}
+
+.event-box:hover {
+    color: #0b2531;
+}
+
 .heading {
     color: white;
     font-family: sans-serif, "Raleway";
@@ -50,40 +64,33 @@ p {
     background-color:#74919F;
     border-radius: 6px;
     box-shadow: none;
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: 1rem;
+    padding-top: 1.5rem;
     height: 4.5rem;
+    flex: 1 0 300px;
+    margin: 0 8px;
+    flex-grow: 1;
 }
 
 .box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
     margin-bottom: none;
 }
 
-.title {
-    color: #D16535;
+a {
+    color: #74919F;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.navbar {
-    background-color:#0b2531;
+a:hover {
+    color: #E58946;
 }
 
 a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
     background-color: #34596f;
     color: #E58946;
     border-radius: 2px;
-}
-
-.navbar-item, .navbar-link {
-    color: white;
-}
-
-.navbar-burger {
-    color: #fff;
-}
-
-.hero.is-info {
-    background-color:#34596f;
-    color: rgb(216, 216, 216);
 }
 
 .button.is-primary {
@@ -114,12 +121,18 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     color: #fff;
 }
 
+.checkbox {
+    padding: 1rem;
+    margin: 1rem;
+}
+
 .checkbox:hover {
     color: #E58946;
 }
 
 .flex-wrapped {
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .content {
@@ -130,17 +143,56 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     background-color:#0b2531;
 }
 
-a {
-    color: #74919F;
-    cursor: pointer;
-    text-decoration: none;
+.hero.is-info {
+    background-color:#34596f;
+    color: rgb(216, 216, 216);
 }
 
-a:hover {
-    color: #E58946;
+.navbar {
+    background-color:#0b2531;
+    max-width: 1100px;
+    margin: 0px auto;
+}
+
+.navbar-item, .navbar-link {
+    color: white;
+}
+
+.navbar-burger {
+    color: #fff;
+}
+
+.section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.section.date-label {
+    padding: 0rem;
 }
 
 strong {
     color: #fff;
     font-weight: 700;
+}
+
+.title {
+    color: #D16535;
+}
+
+.card {
+    background-color:#0b2531;
+    box-shadow: none;
+    color: white;
+}
+
+.card-footer-item {
+    background-color: #34596f;
+    border-color: #34596f;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.card-footer-item:not(:last-child) {
+    border-right: none;
 }

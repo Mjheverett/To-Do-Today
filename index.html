@@ -13,6 +13,7 @@
 
     <!-- CSS Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css" rel="stylesheet">
+    <link href="styles/carousel.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -37,33 +38,76 @@
             </div>
             <div class="navbar-menu" id="navbarMenuHeroA" >
                 <div class="navbar-end">
-                    <a class="navbar-item is-active">
+                    <a href="index.html" class="navbar-item is-active">
                         Home
                     </a>
-                    <a class="navbar-item">
-                        Atlanta
+                    <a href="team.html" class="navbar-item">
+                        Our Team
                     </a>
-                    <a class="navbar-item">
-                        Houston
-                    </a>
-                    <a class="navbar-item">
-                        Seattle
-                    </a>
-                    <a class="navbar-item">
-                        Tampa
+                    <a href="https://github.com/Mjheverett/To-Do-Today" class="navbar-item">
+                        <img src="images/GitHub-Mark-Light-120px-plus.png">
                     </a>
                 </div>
             </div>
         </nav>
     </div>
 
-    <div class="item-1">
-        <figure class="image">
-            
-        </figure>
-    </div>
+    <!-- Start Hero Carousel -->
+    <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide"> 
+                    <figure class="image">
+                        <img src="images/Carousel_Atlanta.png">
+                    </figure>
+            <div class="carousel__snapper">
+                <a href="#carousel__slide4"
+                class="carousel__prev"></a>
+                <a href="#carousel__slide2"
+                class="carousel__next"></a>
+            </div>
+            </li>
+            <li id="carousel__slide2"
+                tabindex="0"
+                class="carousel__slide"> 
+                    <figure class="image">
+                        <img src="images/Carousel_Houston.png">
+                    </figure>
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide1"
+                class="carousel__prev"></a>
+            <a href="#carousel__slide3"
+                class="carousel__next"></a>
+            </li>
+            <li id="carousel__slide3"
+                tabindex="0"
+                class="carousel__slide">
+                    <figure class="image">
+                        <img src="images/Carousel_Seattle.png">
+                    </figure>
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide2"
+                class="carousel__prev"></a>
+            <a href="#carousel__slide4"
+                class="carousel__next"></a>
+            </li>
+            <li id="carousel__slide4"
+                tabindex="0"
+                class="carousel__slide">
+                    <figure class="image">
+                        <img src="images/Carousel_Tampa.png">
+                    </figure>
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide3"
+                class="carousel__prev"></a>
+            <a href="#carousel__slide1"
+                class="carousel__next"></a>
+            </li>
+        </ol>
+    </section>
 
-    <!-- Hero Image -->
+    <!-- Hero Banner -->
     <section class="hero is-info is-small">
         <div class="hero-body">
             <div class="container">
@@ -111,6 +155,10 @@
                 <button class="button" id="tampaButton">Tampa</button>
             </div>
         </div>
+        <br>
+        <div class="container">
+            <p class="header has-text-centered">Select a city to get started!</p>
+        </div>
     </section>
 
     <!-- Activites List-->
@@ -120,105 +168,92 @@
         </div>
         <div class="container" id="eventTypeCheckboxes">
             <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="community" checked>
+                Community Events 
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-building" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                    <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                </svg>
+            </label>
+            <label class="checkbox">
                 <input type="checkbox" id="eventSelect" value="concerts" checked>
                 Concerts
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="sports" checked>
-                Sporting Events
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="expos" checked>
-                Expos
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="community" checked>
-                Community Events
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="festivals" checked>
-                Festivals
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" id="eventSelect" value="performing" checked>
-                Performing Arts
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-music-note-beamed" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                    <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"/>
+                    <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"/>
+                </svg>
             </label>
             <label class="checkbox">
                 <input type="checkbox" id="eventSelect" value="breweries" checked>
                 Craft Beer and Cider
+                <svg width="1em" height="1.0625em" viewBox="0 0 16 17" class="bi bi-cup-straw" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M13.964 1.18a.5.5 0 0 1-.278.65l-2.255.902-.462 2.08c.375.096.714.216.971.368.228.135.56.396.56.82 0 .046-.004.09-.011.132l-.955 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87-1.516 0-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 6.132A.78.78 0 0 1 3.5 6c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 4.614 6.867 4.5 8 4.5c.712 0 1.389.045 1.985.127l.527-2.37a.5.5 0 0 1 .302-.355l2.5-1a.5.5 0 0 1 .65.279zM9.768 5.608A13.991 13.991 0 0 0 8 5.5c-1.076 0-2.033.11-2.707.278A3.284 3.284 0 0 0 4.645 6c.146.073.362.15.648.222C5.967 6.39 6.924 6.5 8 6.5c.571 0 1.109-.03 1.588-.085l.18-.808zm.292 1.756a5.513 5.513 0 0 0 1.325-.297l-.845 8.03c-.013.12-.06.185-.102.214-.357.249-1.167.69-2.438.69-1.27 0-2.08-.441-2.438-.69-.041-.029-.09-.094-.102-.214l-.845-8.03c.137.046.283.088.435.126.774.194 1.817.308 2.95.308.742 0 1.445-.049 2.06-.137zm-5.593-1.48s.003.002.005.006l-.005-.006zm7.066 0l-.005.006a.026.026 0 0 1 .005-.006zM11.354 6a3.282 3.282 0 0 1-.703.235l.1-.446c.264.069.464.142.603.211z"/>
+                </svg>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="expos" checked>
+                Expos
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-easel" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2h2.092L8.473.337zM12.15 11h-1.058l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11zM8.5 11h-1v2.5a.5.5 0 0 0 1 0V11zm-3.592 0H3.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11z"/>
+                    <path fill-rule="evenodd" d="M14 3H2v7h12V3zM2 2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                </svg>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="festivals" checked>
+                Festivals
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-sunglasses" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM6.5 6.497V6.5h-1c0-.568.447-.947.862-1.154C6.807 5.123 7.387 5 8 5s1.193.123 1.638.346c.415.207.862.586.862 1.154h-1v-.003l-.003-.01a.213.213 0 0 0-.036-.053.86.86 0 0 0-.27-.194C8.91 6.1 8.49 6 8 6c-.491 0-.912.1-1.19.24a.86.86 0 0 0-.271.194.213.213 0 0 0-.036.054l-.003.01z"/>
+                <path d="M2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2h-.438a2 2 0 0 1-1.94-1.515L2.31 5.243zM9 5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-2-2V5z"/>
+                </svg>
+
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="performing" checked>
+                Performing Arts
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-brush" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.117 8.117 0 0 1-3.078.132 3.658 3.658 0 0 1-.563-.135 1.382 1.382 0 0 1-.465-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.393-.197.625-.453.867-.826.094-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.2-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.175-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.247-.013-.574.05-.88.479a11.01 11.01 0 0 0-.5.777l-.104.177c-.107.181-.213.362-.32.528-.206.317-.438.61-.76.861a7.127 7.127 0 0 0 2.657-.12c.559-.139.843-.569.993-1.06a3.121 3.121 0 0 0 .126-.75l-.793-.792zm1.44.026c.12-.04.277-.1.458-.183a5.068 5.068 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.591 1.927-5.566 4.66-7.302 6.792-.442.543-.796 1.243-1.042 1.826a11.507 11.507 0 0 0-.276.721l.575.575zm-4.973 3.04l.007-.005a.031.031 0 0 1-.007.004zm3.582-3.043l.002.001h-.002z"/>
+                </svg>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="eventSelect" value="sports" checked>
+                Sporting Events
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trophy" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z"/>
+                </svg>
             </label>
         </div>
     </section>
 
     <!-- Dashboard -->
-    <div class="section">
-        <div class="columns" id="eventsColumns">
-            <div class="column">
-                <div class="level">
-                    <div class="level-left">
-                        <div class="level-item">
-                            <div class="title"></div>
-                        </div>
-                    </div>
-                    <div class="level-right">
-                        <div class="level-item">
-                            <button type="button" class="button is-small" id="date">
-
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <div class="section date-label">
+        <div class="level-right">
+            <div class="level-item">
+                <button type="button" class="button is-small" id="date">
+                </button>
             </div>
         </div>
+    </div>
 
+    <section class="section">
         <div class="columns flex-wrapped" id="eventsContainer">
             <!-- getEventsData adds events here -->
         </div>
-
-        <!-- <div class="tile is-ancestor flex-wrapped">
-            <div class="tile is-parent">
-                <article class="tile is-child box">
-                    <p class="heading">One</p>
-                </article>
-            </div>
-            add more tiles here
-        </div> -->
-    </div>
+    </section>
     
-    <!-- Page Toggle -->
-    <!-- <section class="section">
-        <div class="container">
-            <nav class="pagination" role="navigation" aria-label="pagination">
-                <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
-                <a class="pagination-next">Next page</a>
-                    <ul class="pagination-list">
-                        <li>
-                        <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
-                        </li>
-                        <li>
-                        <a class="pagination-link" aria-label="Goto page 2">2</a>
-                        </li>
-                        <li>
-                        <a class="pagination-link" aria-label="Goto page 3">3</a>
-                        </li>
-                    </ul>
-            </nav>
-        </div>
-    </section> -->
-
     <!-- Footer-->
     <footer class="footer">
         <div class="content has-text-centered">
+            <a href="#top">Back to top</a>
+            <br>
+            <br>
             <p> 
                 Check back for additional cities soon!
             </p>
             <br>
             <p>
-                <strong>Built</strong> by <a href="https://github.com/Mjheverett/To-Do-Today">Dylan Cooper, Matthew Everett, Justin Gardner and Harmony Trevena</a>.
-                <br></br>
-                <a href="team.html">The TEAM</a>
-                <br></br>
-                <a href="#top">Back to top</a>
+                <strong>Built</strong> by <a href="https://github.com/Mjheverett/To-Do-Today">Dylan Cooper, Matthew Everett, Justin Gardner and Harmony Trevena</a>.  
             </p>
         </div>
     </footer>
@@ -227,6 +262,6 @@
 <!-- JS Scripts -->
 <script src="scripts/get.js"></script>
 <script src="scripts/getPredict.js"></script>
-<script src="scripts/getDate.js"></script>
+<!-- <script src="scripts/getDate.js"></script> -->
 <script src="scripts/scripts.js"></script>
 </html>

@@ -150,13 +150,14 @@ const getEventsData = (currentCity, apiDate) => {
     const festivals = getFestivals(currentCity, apiDate);
     const performing = getPerformingArts(currentCity, apiDate);
     const breweries = getBreweries(currentCity);
-    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports];
+    const ticketMaster = getTM(currentCity, apiDate);
+    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports, ticketMaster];
     if (currentCity != '') {
         Promise.all(selectCategories)
         .then(result => {
-            console.log("promise all results", result)
+            // console.log("promise all results", result)
             const eventsList = result.flat();
-            console.log("flattened events", eventsList);
+            // console.log("flattened events", eventsList);
             if (eventsList.length == 0) {
                 eventsList.push("No Events Found for Today");
             };
@@ -171,7 +172,7 @@ const getEventsData = (currentCity, apiDate) => {
 // child function to update DOM elements created by getEventsData
 const updateEventElements = (eventsList) => {
     const shuffledEvents = shuffle(eventsList);
-    console.log("shuffled events", eventsList);
+    // console.log("shuffled events", eventsList);
     const eventAncestor = document.getElementById('eventsContainer');
     eventAncestor.innerHTML = '';
     shuffledEvents.map(function(event) {
@@ -179,10 +180,12 @@ const updateEventElements = (eventsList) => {
         eventParent.classList.add('box');
         const eventWrapper = document.createElement('div');
         eventWrapper.classList.add('content');
-        const eventElement = document.createElement('p');
+        const eventElement = document.createElement('a');
         eventElement.classList.add('heading');
-        const eventName = event;
-        eventElement.innerText = eventName;
+        eventElement.classList.add('event-box');
+        // const eventName = event;
+        eventElement.innerText = event[0];
+        eventElement.href = event[1];
         
         eventWrapper.appendChild(eventElement);
         eventParent.appendChild(eventWrapper);
@@ -217,10 +220,10 @@ const getBreweries = (currentCity) => {
         let breweryShuffle = [];
         if (categorySelections.includes("breweries")) {
             breweryData.map(function(brewery) {
-                const breweryListName = brewery.name;
+                const breweryListName = [brewery.name, brewery.website_url];
                 breweryShuffle = [...breweryShuffle, breweryListName];
                 breweryList = shuffle(breweryShuffle);
-                breweryList = breweryList.slice(0, 5);
+                // breweryList = breweryList.slice(0, 5);
                 return breweryList;
             })
             // console.log("brewery list array", breweryList);
@@ -237,7 +240,7 @@ const getCommunity = (currentCity, apiDate) => {
         let communityList = [];
         if (categorySelections.includes("community")) {
             communityData.results.map(function(community) {    
-                const communityListName = community.title;
+                const communityListName = [community.title, 'url'];
                 communityList = [...communityList, communityListName];
                 return communityList;
             })
@@ -249,13 +252,12 @@ const getCommunity = (currentCity, apiDate) => {
 
 // Concert Data
 const getConcerts = (currentCity, apiDate) => {
-    console.log("apiDate in concert", apiDate);
     const concertURL = `https://api.predicthq.com/v1/events/?category=concerts&place=${currentCity}&end.lte=${apiDate}&start.gte=${apiDate}`;
     return getPredict(concertURL).then(function(concertData) {
         let concertList = [];
         if (categorySelections.includes("concerts")) {
             concertData.results.map(function(concert) {    
-                const concertListName = concert.title;
+                const concertListName = [concert.title, 'url'];
                 concertList = [...concertList, concertListName];
                 return concertList;
             })
@@ -273,7 +275,7 @@ const getExpos = (currentCity, apiDate) => {
         let expoList = [];
         if (categorySelections.includes("expos")) {
             expoData.results.map(function(expo) {    
-                const expoListName = expo.title;
+                const expoListName = [expo.title, 'url'];
                 expoList = [...expoList, expoListName]
                 return expoList;
             })
@@ -291,7 +293,7 @@ const getFestivals = (currentCity, apiDate) => {
         let festivalList = [];
         if (categorySelections.includes("festivals")) {
             festivalData.results.map(function(festival) {
-                const festivalListName = festival.title;
+                const festivalListName = [festival.title, 'url'];
                 festivalList = [...festivalList, festivalListName];
                 return festivalList;
             })
@@ -309,7 +311,7 @@ const getPerformingArts = (currentCity, apiDate) => {
         let performingList = [];
         if (categorySelections.includes("performing")) {
             performingArtsData.results.map(function(performingArts) {    
-                const performingListName = performingArts.title;
+                const performingListName = [performingArts.title, 'url'];
                 performingList = [...performingList, performingListName];
                 return performingList;
             })
@@ -326,7 +328,7 @@ const getSports = (currentCity, apiDate) => {
         let sportList = [];
         if (categorySelections.includes("sports")) {
             sportData.results.map(function(sport) {    
-                const sportListName = sport.title;
+                const sportListName = [sport.title, 'url'];
                 sportList = [...sportList, sportListName];
                 return sportList;
             })
@@ -334,6 +336,22 @@ const getSports = (currentCity, apiDate) => {
             return sportList;
         };
         return sportList;
+    });
+};
+
+// TicketMaster Data
+const getTM = (currentCity, apiDate) => {
+    const TMURL = `https://app.ticketmaster.com/discovery/v2/events.json?city=${currentCity}&startDateTime=${apiDate}T00:00:01Z&endDateTime=${apiDate}T23:59:59Z&apikey=3jrOvprvSgpAYZf10QxR812G8GH88Bvn`;
+    return get(TMURL).then(function(TMData) {
+        console.log("ticket master JSON", TMData);
+        let TMList = [];
+        TMData._embedded.events.map(function(TM) {    
+            const TMListName = [TM.name, TM.url];
+            TMList = [...TMList, TMListName];
+            return TMList;
+        })
+        console.log("ticket master list array", TMList);
+        return TMList;
     });
 };
 
