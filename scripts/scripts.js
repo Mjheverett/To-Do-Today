@@ -151,7 +151,8 @@ const getEventsData = (currentCity, apiDate) => {
     const performing = getPerformingArts(currentCity, apiDate);
     const breweries = getBreweries(currentCity);
     const ticketMaster = getTM(currentCity, apiDate);
-    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports, ticketMaster];
+    const zomato = getZomato(currentCity);
+    const selectCategories = [breweries, community, concerts, expos, festivals, performing, sports, ticketMaster, zomato];
     if (currentCity != '') {
         Promise.all(selectCategories)
         .then(result => {
@@ -343,7 +344,6 @@ const getSports = (currentCity, apiDate) => {
 const getTM = (currentCity, apiDate) => {
     const TMURL = `https://app.ticketmaster.com/discovery/v2/events.json?city=${currentCity}&startDateTime=${apiDate}T00:00:01Z&endDateTime=${apiDate}T23:59:59Z&apikey=3jrOvprvSgpAYZf10QxR812G8GH88Bvn`;
     return get(TMURL).then(function(TMData) {
-        console.log("ticket master JSON", TMData);
         let TMList = [];
         TMData._embedded.events.map(function(TM) {    
             const TMListName = [TM.name, TM.url];
@@ -352,6 +352,24 @@ const getTM = (currentCity, apiDate) => {
         })
         console.log("ticket master list array", TMList);
         return TMList;
+    });
+};
+
+// Zomato Data
+const getZomato = (currentCity) => {
+    const zomatoURL = `https://developers.zomato.com/api/v2.1/search?q=${currentCity}&count=10&sort=rating`;
+    return getZom(zomatoURL).then(function(zomatoData) {
+        let zomatoList = [];
+        if (categorySelections.includes("restaurants")) {
+            zomatoData.restaurants.map(function(zomato) {    
+                const zomatoListName = [zomato.restaurant.name, zomato.restaurant.menu_url];
+                zomatoList = [...zomatoList, zomatoListName];
+                return zomatoList;
+            })
+            console.log("zomato list array", zomatoList);
+            return zomatoList;
+        };
+        return zomatoList;
     });
 };
 
