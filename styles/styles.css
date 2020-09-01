@@ -251,6 +251,10 @@ a strong:hover {
     color: #fff;
 }
 
+.navbar-menu {
+    background-color: #0b2531;
+}
+
 .section {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -272,4 +276,12 @@ strong {
 .title.is-4 {
     font-size: 1.5rem;
     color: #D16535;
+    position: absolute;
+    position: absolute;
+    position: absolute;
+    position: absolute;
+    position: absolute;
+    position: absolute;
+    position: absolute;
+    position: absolute;
 }
