@@ -45,7 +45,7 @@
     <li>Bulma</li>
 </ul
 
-<h3>APIs</h3>
+<h3>APIs:</h3>
 <ul>
     <li><a href="https://www.openbrewerydb.org/">OpenBreweryDB</a></li>
     <li><a href="https://openweathermap.org/">OpenWeatherMap</a></li>
@@ -53,12 +53,6 @@
     <li><a href="https://developer.ticketmaster.com/">TicketMaster</a></li>
     <li><a href="https://developers.zomato.com/">Zomato</a></li>
 </ul
-
-<h3>Other:</h3>
-<ul>
-    <li>?</li>
-    <li>?</li>
-</ul>
 
 </br>
 
