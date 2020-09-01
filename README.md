@@ -85,7 +85,32 @@
     
 <h2><u>Code Snippets:</u></h2>
 
-<h4>Add</h4>
+<h4>Showcases how we worked with OpenBreweryDB's API to pull in event data.</h4>
+
+``` javascript
+
+// Craft Beer Data
+const getBreweries = (currentCity) => {
+    const breweryURL = `https://api.openbrewerydb.org/breweries?by_city=${currentCity}`;
+    return get(breweryURL).then(function(breweryData) {
+        let breweryList = [];
+        let breweryShuffle = [];
+        if (categorySelections.includes("breweries")) {
+            breweryData.map(function(brewery) {
+                const breweryListName = [brewery.name, brewery.website_url];
+                breweryShuffle = [...breweryShuffle, breweryListName];
+                breweryList = shuffle(breweryShuffle);
+                // breweryList = breweryList.slice(0, 5);
+                return breweryList;
+            })
+            // console.log("brewery list array", breweryList);
+            return breweryList;
+        };
+        return breweryList;
+    });
+};
+
+```
 
 <h2>Live Demo</h2>
 <a href="https://to-do-today.netlify.app/">To-Do Today</a>
