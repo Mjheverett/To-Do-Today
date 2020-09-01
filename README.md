@@ -11,7 +11,7 @@
 <p><b>Contributions:</b> API Testing</p>
 <br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
-<p><b>Primary Team Role:</b> JavaScript</p>
+<p><b>Primary Team Role:</b> JavaScript Lead</p>
 <p><b>Contributions:</b> API Integrations</p>
 <br>
 <h3>Justin Gardner: https://github.com/JustinSGardner</h3>
