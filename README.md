@@ -85,6 +85,44 @@
     
 <h2><u>Code Snippets:</u></h2>
 
+<h4>Display's the current date and passes that information into the API to return the desired results.</h4>
+
+``` javascript
+
+// Display's Current Date 
+    function displayDate() {
+        const currentDay = new Date();
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let day = days[currentDay.getDay()];
+        const currentDate = new Date();
+            let year = currentDate.getFullYear();
+            let date = currentDate.getDate();
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let month = months[currentDate.getMonth()];
+        
+          // Use for Month inAPI
+        let thisMonth = currentDate.getMonth() + 1;
+        
+        if (date<10){
+            date = "0" + date;
+        }
+        if (thisMonth<10){
+            thisMonth = "0" + thisMonth;
+        }
+        //Date API url https://api.ipgeolocation.io/timezone?apiKey=9326dc3140ac4b1794c68f9aa51ebdd8&tz=America/Los_Angeles
+        const dateToday = document.getElementById('date');
+        dateToday.innerHTML = (day +" "+ month +" "+ date +", "+ year);
+
+        // Use for Date and Year in API
+        apiDate = String(year + '-' + thisMonth + '-' + date);
+        // console.log("apiDate:", apiDate);
+        return apiDate;
+    };
+    displayDate();
+    // console.log("apiDate in DOM events", apiDate);
+
+```
+<br>
 <h4>Showcases how we worked with OpenBreweryDB's API to pull in event data.</h4>
 
 ``` javascript
@@ -109,6 +147,34 @@ const getBreweries = (currentCity) => {
         return breweryList;
     });
 };
+
+```
+<br>
+<h4>Refreshes the search results based on user input.</h4>
+
+``` javascript
+
+// Monitor checkboxes for clicks to update categorySelection variable and trigger refresh of events data for new selection
+document.querySelectorAll('#eventSelect').forEach(item => {
+    item.addEventListener('click', () => {
+        // console.log("item", item.value);
+        categorySelection();
+        getEventsData(currentCity, apiDate);
+    })
+});
+
+const categorySelection = () => {
+    categorySelections = [];
+    const checkboxes = document.querySelectorAll('#eventSelect');
+    checkboxes.forEach(item => {
+        if (item.checked == true) {
+            categorySelections = [...categorySelections, item.value];
+        }
+        return categorySelections;
+    });
+    // console.log("category selections", categorySelections);
+    return categorySelections;
+}
 
 ```
 
