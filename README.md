@@ -8,9 +8,9 @@
 <h2><u>The Team:</u></h2>
 <h3>Dylan Cooper: https://github.com/Dcooper15</h3>
 </br>
-<p><b>Primary team role:</b></p>
+<p><b>Primary team role:</b> Javascript</p>
 <br>
-<p><b>Contributions:</b></p>
+<p><b>Contributions:</b> API Testing</p>
 </br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
 </br>
@@ -20,15 +20,15 @@
 </br>
 <h3>Justin Gardner: https://github.com/JustinSGardner</h3>
 </br>
-<b>Primary team role:</b> Add.......
+<p><b>Primary team role:</b> HTML and CSS</p>
 <br>
-<b>Contributions:</b> Add.......
+<p><b>Contributions:</b> Testing and UI/UX</p>
 <br>
 <h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
 </br>
-<p><b>Primary team role:</b>HTML, CSS and Javascript</p>
+<p><b>Primary team role:</b> HTML, CSS and Javascript</p>
 <br>
-<p><b>Contributions:</b>UI/UX and Responsive Design</p>
+<p><b>Contributions:</b> UI/UX and Responsive Design</p>
 <br>
 
 <h2><u>What We Used:</u></h2>
@@ -101,4 +101,3 @@
 
 <h2>Live Demo</h2>
 <a href="https://to-do-today.netlify.app/">To-Do Today</a>
-</br>
