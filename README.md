@@ -5,7 +5,7 @@
 <br>
 
 <h2><u>Overview:</u><h2>
-
+<br>
 <b>To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</b>
 
 <br>
