@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Selector for current city
 atlantaButton.addEventListener('click', () => {
     currentCity = "Atlanta";
-    // console.log("current city:", currentCity);
+    console.log("current city:", currentCity);
     houstonButton.classList.remove('is-primary');
     seattleButton.classList.remove('is-primary');
     tampaButton.classList.remove('is-primary');
@@ -115,7 +115,7 @@ atlantaButton.addEventListener('click', () => {
 
 houstonButton.addEventListener('click', () => {
     currentCity = "Houston";
-    // console.log("current city:", currentCity);
+    console.log("current city:", currentCity);
     atlantaButton.classList.remove('is-primary');
     seattleButton.classList.remove('is-primary');
     tampaButton.classList.remove('is-primary');
@@ -127,7 +127,7 @@ houstonButton.addEventListener('click', () => {
 
 seattleButton.addEventListener('click', () => {
     currentCity = "Seattle";
-    // console.log("current city:", currentCity);
+    console.log("current city:", currentCity);
     atlantaButton.classList.remove('is-primary');
     houstonButton.classList.remove('is-primary');
     tampaButton.classList.remove('is-primary');
@@ -139,7 +139,7 @@ seattleButton.addEventListener('click', () => {
 
 tampaButton.addEventListener('click', () => {
     currentCity = "Tampa";
-    // console.log("current city:", currentCity);
+    console.log("current city:", currentCity);
     atlantaButton.classList.remove('is-primary');
     houstonButton.classList.remove('is-primary');
     seattleButton.classList.remove('is-primary');
@@ -215,7 +215,7 @@ const updateEventElements = (eventsList) => {
         // const eventName = event;
         eventElement.innerText = event[0];
         if (event[1] == '') {
-            console.log("event url blank", event);
+            // console.log("event url blank", event);
             let blankURL = String(event[0]);
             blankURL = blankURL.replace(/ /g,'%20');
             eventElement.href = `https://www.google.com/?q=${currentCity}%20${blankURL}`;
@@ -404,13 +404,16 @@ const getTM = (currentCity, apiDate) => {
 
 // Zomato Data
 const getZomato = (currentCity) => {
-    const zomatoURL = `https://developers.zomato.com/api/v2.1/search?q=${currentCity}&count=10&sort=rating`;
+    const zomatoURL = `https://developers.zomato.com/api/v2.1/search?q=${currentCity}&count=30&sort=rating`;
     return getZom(zomatoURL).then(function(zomatoData) {
         let zomatoList = [];
+        let zomatoShuffle = [];
         if (categorySelections.includes("restaurants")) {
             zomatoData.restaurants.map(function(zomato) {    
                 const zomatoListName = [zomato.restaurant.name, zomato.restaurant.menu_url];
-                zomatoList = [...zomatoList, zomatoListName];
+                zomatoShuffle = [...zomatoShuffle, zomatoListName];
+                zomatoList = shuffle(zomatoShuffle);
+                zomatoList = zomatoList.slice(0, 10);
                 return zomatoList;
             })
             // console.log("zomato list array", zomatoList);
