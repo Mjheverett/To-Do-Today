@@ -95,10 +95,10 @@
 <h2><u>Challenges & Solutions:</u><h2>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 
-<b>Challenge:</b>Add</br>
-<b>Solution:</b>Add</br>
-<b>Challenge:</b> Add </br>
-<b>Solution:</b> Add</br>
+<b>Challenge:</b>Display events from a variety of sources and categories in an unbiased manner.</br>
+<b>Solution:</b>All events are aggreagted by a Promise.All call and combined into a single 'events' array. The array is sorted randomly and then sent to create the HTML elements from the sorted elements.</br>
+<b>Challenge:</b> Enable category selection to expand/narrow choices for events types. </br>
+<b>Solution:</b> Enabling API calls based on the category selection prevents the API from being called if the category is not selected. This both helps to narrow data, but also removed the necessity of adding Filters to the page for the initial product.</br>
 <b>Challenge:</b> Add </br>
 <b>Solution:</b> Add </br>
 
@@ -114,6 +114,3 @@
 <h2>Screenshots:</h2>
 
 <h4>Sub-heading</h4>
-
-
-       
