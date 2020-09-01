@@ -1,17 +1,17 @@
 <h1>TO-DO TODAY<h1>
-<br>
 <img src="images/Main-page.png">
 <br>
+
+<h2>Overview:<h2>
 <br>
-<h2><u>Overview:</u><h2>
-<br>
-<p><b>To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</b></p>
+<p> To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</p>
 
 <br>
 
 <h2><u>The Team:</u></h2>
-
+</br>
 <h3>Dylan Cooper: https://github.com/Dcooper15</h3>
+</br>
 <b>Primary team role:</b> Ad........
 <br>
 <b>Contributions:</b> Add...........
