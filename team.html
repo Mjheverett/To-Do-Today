@@ -13,6 +13,7 @@
 
     <!-- CSS Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css" rel="stylesheet">
+    <link href="/styles/carousel.css" rel="stylesheet">
     <link href="/styles/styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -28,12 +29,7 @@
                 <a class="navbar-item" href="index.html">
                     <img src="images/To-Do_Today_Logo.png" alt="TO-DAY Logo">
                 </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+                
             </div>
             <div class="navbar-menu" id="navbarMenuHeroA" >
                 <div class="navbar-end">
@@ -50,6 +46,61 @@
             </div>
         </nav>
     </div>
+
+    <!-- Start Hero Carousel -->
+    <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide"> 
+                    <figure class="image">
+                        <img src="/images/Carousel_Atlanta.png">
+                    </figure>
+            <div class="carousel__snapper">
+                <a href="#carousel__slide4"
+                class="carousel__prev"></a>
+                <a href="#carousel__slide2"
+                class="carousel__next"></a>
+            </div>
+            </li>
+            <li id="carousel__slide2"
+                tabindex="0"
+                class="carousel__slide"> 
+                    <figure class="image">
+                        <img src="/images/Carousel_Houston.png">
+                    </figure>
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide1"
+                class="carousel__prev"></a>
+            <a href="#carousel__slide3"
+                class="carousel__next"></a>
+            </li>
+            <li id="carousel__slide3"
+                tabindex="0"
+                class="carousel__slide">
+                    <figure class="image">
+                        <img src="/images/Carousel_Seattle.png">
+                    </figure>
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide2"
+                class="carousel__prev"></a>
+            <a href="#carousel__slide4"
+                class="carousel__next"></a>
+            </li>
+            <li id="carousel__slide4"
+                tabindex="0"
+                class="carousel__slide">
+                    <figure class="image">
+                        <img src="/images/Carousel_Tampa.png">
+                    </figure>
+            <div class="carousel__snapper"></div>
+            <a href="#carousel__slide3"
+                class="carousel__prev"></a>
+            <a href="#carousel__slide1"
+                class="carousel__next"></a>
+            </li>
+        </ol>
+    </section>
 
     <!-- Hero Image -->
     <section class="hero is-info is-small">
@@ -78,18 +129,17 @@
                 </div>
             </div>
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                Dylan is a Software Developer residing in the Tampa, Florida area.
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        View on <a href="https://github.com/Dcooper15">GitHub</a>
+                        View on <a href="https://github.com/Dcooper15"><strong>GitHub</strong></a>
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Connect on <a href="https://www.linkedin.com/in/dylan-cooper-3a7b44197/">LinkedIn</a>
+                        Connect on <a href="https://www.linkedin.com/in/dylan-cooper-3a7b44197/"><strong>LinkedIn</strong></a>
                     </span>
                 </p>
             </footer>
@@ -109,18 +159,17 @@
                 </div>
             </div>
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>matthew@mjheverett.com</a>.
+                Matthew is an Engineer turned Software Developer working in Atlanta, GA.
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        View on <a href="https://github.com/Mjheverett">GitHub</a>
+                        View on <a href="https://github.com/Mjheverett"><strong>GitHub</strong></a>
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Connect on <a href="https://www.linkedin.com/in/Mjheverett/">LinkedIn</a>
+                        Connect on <a href="https://www.linkedin.com/in/Mjheverett/"><strong>LinkedIn</strong></a>
                     </span>
                 </p>
             </footer>
@@ -140,18 +189,17 @@
                 </div>
             </div>
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@Mjheverett</a>.
+                Justin is an Environmental Consultant now working as a Software Engineer living near Houston, Texas.
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        View on <a href="https://github.com/JustinSGardner">GitHub</a>
+                        View on <a href="https://github.com/JustinSGardner"><strong>GitHub</strong></a>
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Connect on <a href="https://www.linkedin.com/in/justin-gardner-981477156//">LinkedIn</a>
+                        Connect on <a href="https://www.linkedin.com/in/justin-gardner-981477156//"><strong>LinkedIn</strong></a>
                     </span>
                 </p>
             </footer>
@@ -171,18 +219,17 @@
                 </div>
             </div>
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@Mjheverett</a>.
+                Harmony is a Project Manager and designer turned Software Developer.
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        View on <a href="https://github.com/harmonytrevena">GitHub</a>
+                        View on <a href="https://github.com/harmonytrevena"><strong>GitHub</strong></a>
                     </span>
                 </p>
                 <p class="card-footer-item">
                     <span>
-                        Connect on <a href="https://www.linkedin.com/in/harmony-trevena/">LinkedIn</a>
+                        Connect on <a href="https://www.linkedin.com/in/harmony-trevena/"><strong>LinkedIn</strong></a>
                     </span>
                 </p>
             </footer>
@@ -192,7 +239,9 @@
     <!-- Footer-->
     <footer class="footer">
         <div class="content has-text-centered">
-            <a href="#top">Back to top</a>
+            <div class="backToTop"><a href="#top">Back to Top</a></div>
+            
+            <div class="backtoHome"><a href="index.html">Back to Home</a></div>
             <br>
             <br>
             <p>
@@ -203,8 +252,6 @@
 
 </body>
 <!-- JS Scripts -->
-<script src="/scripts/get.js"></script>
-<script src="/scripts/getPredict.js"></script>
-<script src="/scripts/getDate.js"></script>
-<script src="/scripts/scripts.js"></script>
+<!-- <script src="/scripts/scripts.js"></script> -->
+<script src="scripts/scripts.js"></script>
 </html>
