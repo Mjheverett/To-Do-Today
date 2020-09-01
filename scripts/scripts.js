@@ -70,6 +70,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     displayDate();
     // console.log("apiDate in DOM events", apiDate);
 
+    (function() {
+        document.trigger("enhance");
+    })
+
     // Modal popup for Coronavirus Warning
     // Get the modal
     var modal = document.getElementById("myModal");

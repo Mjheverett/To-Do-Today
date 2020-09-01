@@ -13,6 +13,7 @@
 <h2><u>The Team:</u></h2>
 
 <h3>Dylan Cooper: https://github.com/Dcooper15</h3>
+</br>
 <b>Primary team role:</b> Ad........
 </br>
 <b>Contributions:</b> Add...........
