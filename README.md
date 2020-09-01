@@ -8,33 +8,33 @@
 <h2><u>Overview:</u><h2>
 <p>To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</p>
 
-</br>
+<br>
 
 <h2><u>The Team:</u></h2>
 
 <h3>Dylan Cooper: https://github.com/Dcooper15</h3>
 <b>Primary team role:</b> Ad........
-</br>
+<br>
 <b>Contributions:</b> Add...........
 
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
 <b>Primary team role:</b> Javascript
-</br>
+<br>
 <b>Contributions:</b> API Integrations
 
 <h3>Justin Gardner: https://github.com/JustinSGardner</h3>
 <b>Primary team role:</b> Add.......
-</br>
+<br>
 <b>Contributions:</b> Add.......
 
 <h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
 <b>Primary team role:</b> Add.......
-</br>
+<br>
 <b>Contributions:</b> Add.......
 
-</br>
-</br>
-<h2><u>What we used:</u></h3>
+<br>
+<br>
+<h2><u>What we used:</u></h2>
 <h3>Languages:</h3>
 <ul>
     <li>HTML5</li>
@@ -46,7 +46,7 @@
 <h3>Frameworks:</h3>
 <ul>
     <li>Bulma</li>
-</ul
+</ul>
 
 <h3>APIs:</h3>
 <ul>
@@ -55,9 +55,9 @@
     <li><a href="https://www.predicthq.com/">PredictHQ</a></li>
     <li><a href="https://developer.ticketmaster.com/">TicketMaster</a></li>
     <li><a href="https://developers.zomato.com/">Zomato</a></li>
-</ul
+</ul>
 
-</br>
+<br>
 
 <h2><u>MVP (Minimum Viable Product):</u></h2>
 <ul>
@@ -67,15 +67,13 @@
     <li>Category selections</li>
     <li>Useful and informative</li>
 </ul>
-
-</br>
-
+<br>
 <h2><u>Stretch Goals Completed</u></h2>
 <ul>
     <li>Clickable links for additional information</li>
     <li>Focused recommendations</li>
 </ul>
-
+<br>
 <h2><u>Stretch Goals Future</u></h2>
 <ul>
     <li>Additional preferences selections</li>
@@ -86,18 +84,16 @@
     </ul>
     <li>Additional cities</li>
 </ul>
-
-</br>
-
+<br>
 <h2><u>Challenges & Solutions:</u><h2>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
-
-<b>Challenge:</b>Display events from a variety of sources and categories in an unbiased manner.</br>
-<b>Solution:</b>All events are aggreagted by a Promise.All call and combined into a single 'events' array. The array is sorted randomly and then sent to create the HTML elements from the sorted elements.</br>
-<b>Challenge:</b> Enable category selection to expand/narrow choices for events types. </br>
-<b>Solution:</b> Enabling API calls based on the category selection prevents the API from being called if the category is not selected. This both helps to narrow data, but also removed the necessity of adding Filters to the page for the initial product.</br>
-<b>Challenge:</b> Add </br>
-<b>Solution:</b> Add </br>
+<br>
+<p><b>Challenge:</b>Display events from a variety of sources and categories in an unbiased manner.</p>
+<p><b>Solution:</b>All events are aggreagted by a Promise.All call and combined into a single 'events' array. The array is sorted randomly and then sent to create the HTML elements from the sorted elements.</p>
+<p><b>Challenge:</b> Enable category selection to expand/narrow choices for events types.</p>
+<p><b>Solution:</b> Enabling API calls based on the category selection prevents the API from being called if the category is not selected. This both helps to narrow data, but also removed the necessity of adding Filters to the page for the initial product.</p>
+<p><b>Challenge:</b> Add </p>
+<p><b>Solution:</b> Add </p>
 
 <h2><u>Code Snippets:</u></h2>
 
