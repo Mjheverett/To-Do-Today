@@ -40,11 +40,6 @@
     <li>JSON</li>
 </ul>
 
-<h3>Libraries:</h3>
-<ul>
-    <li>TBD</li>
-</ul
-
 <h3>Frameworks:</h3>
 <ul>
     <li>Bulma</li>
