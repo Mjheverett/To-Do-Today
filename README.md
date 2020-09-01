@@ -53,10 +53,10 @@
 <h3>APIs</h3>
 <ul>
     <li><a href="https://www.openbrewerydb.org/">OpenBreweryDB</a></li>
-    <li>OpenWeatherMap</li>
-    <li>PredictHQ</li>
-    <li>TicketMaster</li>
-    <li>Zomato</li>
+    <li><a href="https://openweathermap.org/">OpenWeatherMap</a></li>
+    <li><a href="https://www.predicthq.com/">PredictHQ</a></li>
+    <li><a href="https://developer.ticketmaster.com/">TicketMaster</a></li>
+    <li><a href="https://developers.zomato.com/">Zomato</a></li>
 </ul
 
 <h3>Other:</h3>
@@ -73,21 +73,20 @@
     <li>Select from listed cities (DigitalCrafts cities)</li>
     <li>Mobile-first development</li>
     <li>Category selections</li>
-    <li>Useful and informative, more than just a list</li>
+    <li>Useful and informative</li>
 </ul>
 
 </br>
 
 <h2><u>Stretch Goals Completed</u></h2>
 <ul>
-    <li>Organized, sorted information</li>
-    <li>Additional preferences selections</li>
+    <li>Clickable links for additional information</li>
     <li>Focused recommendations</li>
 </ul>
 
 <h2><u>Stretch Goals Future</u></h2>
 <ul>
-<li></li>
+    <li>Additional preferences selections</li>
 </ul>
 
 </br>
