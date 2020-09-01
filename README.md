@@ -7,26 +7,26 @@
     
 <h2><u>The Team:</u></h2>
 <h3>Dylan Cooper: https://github.com/Dcooper15</h3>
-</br>
-<p><b>Primary Team Role:</b> Javascript</p>
+<br>
+<p><b>Primary Team Role:</b> JavaScript</p>
 <br>
 <p><b>Contributions:</b> API Testing</p>
-</br>
+<br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
 </br>
-<p><b>Primary Team Role:</b> Javascript</p>
+<p><b>Primary Team Role:</b> JavaScript</p>
 <br>
 <p><b>Contributions:</b> API Integrations</p>
-</br>
+<br>
 <h3>Justin Gardner: https://github.com/JustinSGardner</h3>
-</br>
+<br>
 <p><b>Primary Team Role:</b> HTML and CSS</p>
 <br>
 <p><b>Contributions:</b> Testing and UI/UX</p>
 <br>
 <h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
-</br>
-<p><b>Primary Team Role:</b> HTML, CSS and Javascript</p>
+<br>
+<p><b>Primary Team Role:</b> HTML, CSS and JavaScript</p>
 <br>
 <p><b>Contributions:</b> UI/UX and Responsive Design</p>
 <br>
