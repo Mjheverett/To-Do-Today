@@ -87,6 +87,12 @@
 <h2><u>Stretch Goals Future</u></h2>
 <ul>
     <li>Additional preferences selections</li>
+    <li>Additional information displayed</li>
+    <ul>
+        <li>Images from location</li>
+        <li>Operating hours</li>
+    </ul>
+    <li>Additional cities</li>
 </ul>
 
 </br>
@@ -107,7 +113,7 @@
 
 
 <h2>Live Demo</h2>
-Add
+<a href="https://to-do-today.netlify.app/">To-Do Today</a>
 </br>
 
 <h2>Screenshots:</h2>
