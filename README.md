@@ -1,4 +1,4 @@
-<img src="images/To-Do_Today_Logo.png">
+<h1>TO-DO TODAY<h1>
 
 <img src="images/Main-page.png">
 <br>
