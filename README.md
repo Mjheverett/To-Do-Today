@@ -1,10 +1,8 @@
 <h1>TO-DO TODAY<h1>
 <img src="images/Main-page.png">
-<br>
 
 <h2>Overview:<h2>
-<br>
-<p> To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</p>
+<p>To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</p>
 
 <br>
 
