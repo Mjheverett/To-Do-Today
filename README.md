@@ -15,9 +15,9 @@
 <b>Contributions:</b> Add...........
 
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
-<b>Primary team role:</b> Add.......
+<b>Primary team role:</b> Javascript
 </br>
-<b>Contributions:</b> Add.........
+<b>Contributions:</b> API Integrations
 
 <h3>Justin Gardner: https://github.com/JustinSGardner</h3>
 <b>Primary team role:</b> Add.......
@@ -52,8 +52,11 @@
 
 <h3>APIs</h3>
 <ul>
+    <li><a href="https://www.openbrewerydb.org/">OpenBreweryDB</a></li>
     <li>OpenWeatherMap</li>
     <li>PredictHQ</li>
+    <li>TicketMaster</li>
+    <li>Zomato</li>
 </ul
 
 <h3>Other:</h3>
