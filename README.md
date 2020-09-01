@@ -180,3 +180,5 @@ const categorySelection = () => {
 
 <h2>Live Demo</h2>
 <a href="https://to-do-today.netlify.app/">To-Do Today</a>
+
+<img src="images/Main-page.png">
