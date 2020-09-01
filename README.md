@@ -180,5 +180,9 @@ const categorySelection = () => {
 
 <h2>Live Demo</h2>
 <a href="https://to-do-today.netlify.app/">To-Do Today</a>
-
-<img src="images/Main-page.png">
+<br>
+<h4>Preview of user navigating the event categories checkboxes and selecting an event (redirects user to Third Party Website).</h4>
+<img src="images/HomePage_to_ThirdPartyWebsite.gif">
+<br>
+<h4>Preview of user navigating the page and being redirected to Google to learn more about the event.</h4>
+<img src="images/HomePage_to_GoogleSearch.gif">
