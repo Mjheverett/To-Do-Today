@@ -2,6 +2,7 @@
 
 <img src="images/Main-page.png">
 <br>
+<br>
 <img src="images/To-Do_Today_Logo.png">
 
 <h2><u>Overview:</u><h2>
