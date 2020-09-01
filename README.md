@@ -83,7 +83,7 @@
 </ul>
 <br>
 
-<h2><u>Challenges & Solutions:</u><h2>
+<h2><u>Challenges & Solutions:</u></h2>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 <br>
 <p><b>Challenge:</b> Display events from a variety of sources and categories in an unbiased manner.</p>
