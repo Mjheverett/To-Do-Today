@@ -1,7 +1,7 @@
 <h1>TO-DO TODAY<h1>
 <img src="images/Main-page.png">
 
-<h2>Overview:<h2>
+<h2><u>Overview:</u><h2>
 <p>To-Do Today provides information about local events that are happening when you use it; Today! With information about weather, concerts, festivals, sporting events, breweries and more, To-Do Today provides plenty of options to find something to-do.</p>
 <br>
     
@@ -19,14 +19,16 @@
 <p><b>Contributions:</b> API Integrations</p>
 </br>
 <h3>Justin Gardner: https://github.com/JustinSGardner</h3>
+</br>
 <b>Primary team role:</b> Add.......
 <br>
 <b>Contributions:</b> Add.......
 <br>
 <h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
-<p><b>Primary team role:</b></p>
+</br>
+<p><b>Primary team role:</b>HTML, CSS and Javascript</p>
 <br>
-<p><b>Contributions:</b></p>
+<p><b>Contributions:</b>UI/UX and Responsive Design</p>
 <br>
 
 <h2><u>What We Used:</u></h2>
@@ -82,13 +84,11 @@
 <br>
 
 <h2><u>Challenges & Solutions:</u><h2>
-<br>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 <br>
 <p><b>Challenge:</b> Display events from a variety of sources and categories in an unbiased manner.</p>
 <br>
 <p><b>Solution:</b> All events are aggreagted by a Promise.All call and combined into a single 'events' array. The array is sorted randomly and then sent to create the HTML elements from the sorted elements.</p>
-<br>
 <br>
 <p><b>Challenge:</b> Enable category selection to expand/narrow choices for events types.</p>
 <br>
