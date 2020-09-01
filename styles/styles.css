@@ -110,6 +110,14 @@ a strong:hover {
     color: #fff;
 }
 
+.buttons {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+    justify-content: flex-start;
+}
+
 .card {
     background-color:#0b2531;
     box-shadow: none;
