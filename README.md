@@ -39,12 +39,10 @@
     <li>JavaScript</li>
     <li>JSON</li>
 </ul>
-<br>
 <h3>Frameworks:</h3>
 <ul>
     <li>Bulma</li>
 </ul>
-<br>
 <h3>APIs:</h3>
 <ul>
     <li><a href="https://www.openbrewerydb.org/">OpenBreweryDB</a></li>
