@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const currentDate = new Date();
             let year = currentDate.getFullYear();
             let date = currentDate.getDate();
-            let months =      ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let month = months[currentDate.getMonth()];
         
           // Use for Month inAPI
@@ -66,9 +66,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
         apiDate = String(year + '-' + thisMonth + '-' + date);
         // console.log("apiDate:", apiDate);
         return apiDate;
-    }
+    };
     displayDate();
     // console.log("apiDate in DOM events", apiDate);
+
+    // Modal popup for Coronavirus Warning
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    // modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 });
 
 // ********** ********** City Button Event Listeners ********** **********
@@ -345,11 +368,13 @@ const getTM = (currentCity, apiDate) => {
     const TMURL = `https://app.ticketmaster.com/discovery/v2/events.json?city=${currentCity}&startDateTime=${apiDate}T00:00:01Z&endDateTime=${apiDate}T23:59:59Z&apikey=3jrOvprvSgpAYZf10QxR812G8GH88Bvn`;
     return get(TMURL).then(function(TMData) {
         let TMList = [];
-        TMData._embedded.events.map(function(TM) {    
-            const TMListName = [TM.name, TM.url];
-            TMList = [...TMList, TMListName];
-            return TMList;
-        })
+        if ('_embedded' in TMData) {
+            TMData._embedded.events.map(function(TM) {    
+                const TMListName = [TM.name, TM.url];
+                TMList = [...TMList, TMListName];
+                return TMList;
+            })
+        };
         console.log("ticket master list array", TMList);
         return TMList;
     });
@@ -393,6 +418,6 @@ const categorySelection = () => {
         }
         return categorySelections;
     });
-    console.log("category selections", categorySelections);
+    // console.log("category selections", categorySelections);
     return categorySelections;
 }

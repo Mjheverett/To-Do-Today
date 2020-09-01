@@ -102,14 +102,14 @@
   }
   
   .carousel__slide:before {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate3d(-50%,-40%,70px);
   }
   
   .carousel__snapper {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -151,3 +151,4 @@
     background-position: center center;
     pointer-events: none;
   }
+

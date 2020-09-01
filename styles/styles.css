@@ -32,50 +32,7 @@ p {
     font-weight: normal;
 }
 
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-    color: #D16535;
-    font-family: sans-serif, "Raleway";
-}
-
-/* .event-box is text inside the event elements */
-.event-box {
-    font-family: sans-serif, "Roboto";
-    font-size: 100%;
-    font-weight: normal;
-    width: 100%;
-}
-
-.event-box:hover {
-    color: #0b2531;
-}
-
-.heading {
-    color: white;
-    font-family: sans-serif, "Raleway";
-    display: block;
-    font-size: 1em;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    text-transform: capitalize;
-}
-
-.box {
-    background-color:#74919F;
-    border-radius: 6px;
-    box-shadow: none;
-    /* margin: 1rem; */
-    padding: 1rem;
-    padding-top: 1.5rem;
-    height: 4.5rem;
-    flex: 1 0 300px;
-    margin: 0 8px;
-    flex-grow: 1;
-}
-
-.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
-    margin-bottom: none;
-}
+/* ********** Alphabetical Below Here ********** */
 
 a {
     color: #74919F;
@@ -91,6 +48,38 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     background-color: #34596f;
     color: #E58946;
     border-radius: 2px;
+}
+
+a strong {
+    color:#fff;
+}
+
+a strong:hover {
+    color: #E58946;
+}
+
+.backToTop {
+    margin-right: 0%;
+    justify-content: center;
+}
+
+.box {
+    background-color:#74919F;
+    border-radius: 6px;
+    box-shadow: none;
+    display: flex;
+    /* margin: 1rem; */
+    /* padding: 1rem;
+    padding-top: 1rem; */
+    height: 6rem;
+    flex: 1 0 300px;
+    margin: 0 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
+    margin-bottom: none;
 }
 
 .button.is-primary {
@@ -121,6 +110,29 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     color: #fff;
 }
 
+.card {
+    background-color:#0b2531;
+    box-shadow: none;
+    color: white;
+}
+
+.card-footer {
+    border-top: none;
+}
+
+.card-footer-item {
+    background-color: #34596f;
+    border-color: #34596f;
+    border-radius: 6px;
+    color: #fff;
+    margin: 0.75rem;
+}
+
+.card-footer-item:not(:last-child) {
+    border-right: none;
+    color: #fff;
+}
+
 .checkbox {
     padding: 1rem;
     margin: 1rem;
@@ -130,22 +142,91 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     color: #E58946;
 }
 
-.flex-wrapped {
-    flex-wrap: wrap;
-    justify-content: space-around;
+  /* The Close Modal Button */
+.close {
+    color: #0b2531;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #E58946;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .content {
-    color: white;
+    color: #fff;
+    margin: 0.75rem;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: #D16535;
+    font-family: sans-serif, "Raleway";
+}
+
+/* .event-box is text inside the event elements */
+.event-box {
+    font-family: sans-serif, "Roboto";
+    font-size: 100%;
+    font-weight: normal;
+    width: 100%;
+}
+
+.event-box:hover {
+    color: #0b2531;
+}
+
+.flex-wrapped {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .footer {
     background-color:#0b2531;
 }
 
+.heading {
+    color: white;
+    font-family: sans-serif, "Raleway";
+    display: block;
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
 .hero.is-info {
     background-color:#34596f;
     color: rgb(216, 216, 216);
+}
+
+/* The Modal (background) */
+.modal {
+    background-color: rgb(117,117,117); /* Fallback color */
+    background-color: rgba(117, 117, 117, 0.1); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    height: 100%; /* Full height */
+    left: 0;
+    overflow: auto; /* Enable scroll if needed */
+    position: fixed; /* Stay in place */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1; /* Sit on top */
+}
+
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #74919F;
+    border: none;
+    border-radius: 6px;
+    color: #0b2531;
+    margin: 25% auto; /* 25% from the top and centered */
+    padding: 20px;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .navbar {
@@ -180,19 +261,7 @@ strong {
     color: #D16535;
 }
 
-.card {
-    background-color:#0b2531;
-    box-shadow: none;
-    color: white;
-}
-
-.card-footer-item {
-    background-color: #34596f;
-    border-color: #34596f;
-    border-radius: 6px;
-    color: #fff;
-}
-
-.card-footer-item:not(:last-child) {
-    border-right: none;
+.title.is-4 {
+    font-size: 1.5rem;
+    color: #D16535;
 }
