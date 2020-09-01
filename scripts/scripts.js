@@ -70,6 +70,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     displayDate();
     // console.log("apiDate in DOM events", apiDate);
 
+    (function() {
+        document.trigger("enhance");
+    })
+
     // Modal popup for Coronavirus Warning
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -207,9 +211,17 @@ const updateEventElements = (eventsList) => {
         const eventElement = document.createElement('a');
         eventElement.classList.add('heading');
         eventElement.classList.add('event-box');
+        eventElement.setAttribute('target','_blank');
         // const eventName = event;
         eventElement.innerText = event[0];
-        eventElement.href = event[1];
+        if (event[1] == '') {
+            console.log("event url blank", event);
+            let blankURL = String(event[0]);
+            blankURL = blankURL.replace(/ /g,'%20');
+            eventElement.href = `https://www.google.com/?q=${currentCity}%20${blankURL}`;
+        } else {
+            eventElement.href = event[1];
+        }
         
         eventWrapper.appendChild(eventElement);
         eventParent.appendChild(eventWrapper);
@@ -264,7 +276,9 @@ const getCommunity = (currentCity, apiDate) => {
         let communityList = [];
         if (categorySelections.includes("community")) {
             communityData.results.map(function(community) {    
-                const communityListName = [community.title, 'url'];
+                let communityURL = String(community.title);
+                communityURL = communityURL.replace(/ /g,'%20');
+                const communityListName = [community.title, `https://www.google.com/?q=${currentCity}%20${communityURL}`];
                 communityList = [...communityList, communityListName];
                 return communityList;
             })
@@ -281,7 +295,9 @@ const getConcerts = (currentCity, apiDate) => {
         let concertList = [];
         if (categorySelections.includes("concerts")) {
             concertData.results.map(function(concert) {    
-                const concertListName = [concert.title, 'url'];
+                let concertURL = String(concert.title);
+                concertURL = concertURL.replace(/ /g,'%20');
+                const concertListName = [concert.title, `https://www.google.com/?q=${currentCity}%20${concertURL}`];
                 concertList = [...concertList, concertListName];
                 return concertList;
             })
@@ -299,7 +315,9 @@ const getExpos = (currentCity, apiDate) => {
         let expoList = [];
         if (categorySelections.includes("expos")) {
             expoData.results.map(function(expo) {    
-                const expoListName = [expo.title, 'url'];
+                let expoURL = String(expo.title);
+                expoURL = expoURL.replace(/ /g,'%20');
+                const expoListName = [expo.title, `https://www.google.com/?q=${currentCity}%20${expoURL}`];
                 expoList = [...expoList, expoListName]
                 return expoList;
             })
@@ -317,7 +335,9 @@ const getFestivals = (currentCity, apiDate) => {
         let festivalList = [];
         if (categorySelections.includes("festivals")) {
             festivalData.results.map(function(festival) {
-                const festivalListName = [festival.title, 'url'];
+                let festivalURL = String(festival.title);
+                festivalURL = festivalURL.replace(/ /g,'%20');
+                const festivalListName = [festival.title, `https://www.google.com/?q=${currentCity}%20${festivalURL}`];
                 festivalList = [...festivalList, festivalListName];
                 return festivalList;
             })
@@ -335,7 +355,9 @@ const getPerformingArts = (currentCity, apiDate) => {
         let performingList = [];
         if (categorySelections.includes("performing")) {
             performingArtsData.results.map(function(performingArts) {    
-                const performingListName = [performingArts.title, 'url'];
+                let performingArtsURL = String(performingArts.title);
+                performingArtsURL = performingArtsURL.replace(/ /g,'%20');
+                const performingListName = [performingArts.title, `https://www.google.com/?q=${currentCity}%20${performingArtsURL}`];
                 performingList = [...performingList, performingListName];
                 return performingList;
             })
@@ -352,9 +374,9 @@ const getSports = (currentCity, apiDate) => {
         let sportList = [];
         if (categorySelections.includes("sports")) {
             sportData.results.map(function(sport) {    
-                const sportListName = [sport.title, 'url'];
-                sportList = [...sportList, sportListName];
-                return sportList;
+                let sportURL = String(sport.title);
+                sportURL = sportURL.replace(/ /g,'%20');
+                const sportListName = [sport.title, `https://www.google.com/?q=${currentCity}%20${sportURL}`];
             })
             // console.log("sport list array", sportList);
             return sportList;
@@ -375,7 +397,7 @@ const getTM = (currentCity, apiDate) => {
                 return TMList;
             })
         };
-        console.log("ticket master list array", TMList);
+        // console.log("ticket master list array", TMList);
         return TMList;
     });
 };
@@ -391,7 +413,7 @@ const getZomato = (currentCity) => {
                 zomatoList = [...zomatoList, zomatoListName];
                 return zomatoList;
             })
-            console.log("zomato list array", zomatoList);
+            // console.log("zomato list array", zomatoList);
             return zomatoList;
         };
         return zomatoList;
