@@ -65,6 +65,7 @@
 <ul>
     <li>Additional Preferences Selections</li>
     <li>Additional Information Displayed</li>
+    <li>Add Cross-browser funtionaility for CSS Keyframes</li>
     <ul>
         <li>Images from Location</li>
         <li>Operating Hours</li>
@@ -79,6 +80,9 @@
 <p><b>Challenge:</b> Display events from a variety of sources and categories in an unbiased manner.</p>
 <p><b>Solution:</b> All events are aggreagted by a Promise.All call and combined into a single 'events' array. The array is sorted randomly and then sent to create the HTML elements from the sorted elements.</p>
 <br>
+<p><b>Challenge:</b> Enable auto scolling for hero carousel in Moz and Safari</p>
+<p><b>Solution:</b> Keyframes animations for the carousel do not work properly on Firefox and Safari browsers.
+-webkit- and -moz- prefixes have been added in addition to the standard Keyframe with no change to behavior. Current solution allows user to manually scroll through images.</p>
 <p><b>Challenge:</b> Enable category selection to expand/narrow choices for events types.</p>
 <p><b>Solution:</b> Enabling API calls based on the category selection prevents the API from being called if the category is not selected. This both helps to narrow data, but also removed the necessity of adding Filters to the page for the initial product.</p>
 <br>
