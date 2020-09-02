@@ -217,7 +217,7 @@ const updateEventElements = (eventsList) => {
             console.log("event url blank", event);
             let blankURL = String(event[0]);
             blankURL = blankURL.replace(/ /g,'%20');
-            eventElement.href = `https://www.google.com/?q=${currentCity}%20${blankURL}`;
+            eventElement.href = `https://www.google.com/search?q=${currentCity}%20${blankURL}`;
         } else {
             eventElement.href = event[1];
         }
