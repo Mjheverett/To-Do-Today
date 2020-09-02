@@ -187,7 +187,7 @@ const getEventsData = (currentCity, apiDate) => {
             const eventsList = result.flat();
             // console.log("flattened events", eventsList);
             if (eventsList.length == 0) {
-                eventsList.push("No Events Found for Today");
+                eventsList.push(["No Events Found for Today","https://www.boredbutton.com/"]);
             };
             updateEventElements(eventsList);
         })
@@ -200,7 +200,7 @@ const getEventsData = (currentCity, apiDate) => {
 // child function to update DOM elements created by getEventsData
 const updateEventElements = (eventsList) => {
     const shuffledEvents = shuffle(eventsList);
-    // console.log("shuffled events", eventsList);
+    console.log("shuffled events", eventsList);
     const eventAncestor = document.getElementById('eventsContainer');
     eventAncestor.innerHTML = '';
     shuffledEvents.map(function(event) {
@@ -212,10 +212,9 @@ const updateEventElements = (eventsList) => {
         eventElement.classList.add('heading');
         eventElement.classList.add('event-box');
         eventElement.setAttribute('target','_blank');
-        // const eventName = event;
         eventElement.innerText = event[0];
         if (event[1] == '') {
-            // console.log("event url blank", event);
+            console.log("event url blank", event);
             let blankURL = String(event[0]);
             blankURL = blankURL.replace(/ /g,'%20');
             eventElement.href = `https://www.google.com/?q=${currentCity}%20${blankURL}`;
