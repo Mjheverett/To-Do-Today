@@ -278,3 +278,9 @@ strong {
     color: #D16535;
     position: relative;
 }
+
+@media (max-width: 768px) {
+    .weather {
+        text-align: center !important;
+    }
+}
