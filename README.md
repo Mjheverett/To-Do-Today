@@ -20,7 +20,7 @@
 <br>
 <h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
 <p><b>Primary Team Role:</b> UI/UX Lead and Brand Development</p>
-<p><b>Contributions:</b> UI/UX, Branding, Graphic Design and Responsive Framework Implemendation</p>
+<p><b>Contributions:</b> UI/UX, Branding, Graphic Design and Responsive Framework Implementation</p>
 <br>
 
 <h2><u>What We Used:</u></h2>
