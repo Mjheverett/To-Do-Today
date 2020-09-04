@@ -19,8 +19,8 @@
 <p><b>Contributions:</b> Testing and UI/UX</p>
 <br>
 <h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
-<p><b>Primary Team Role:</b> HTML, CSS and JavaScript</p>
-<p><b>Contributions:</b> UI/UX and Responsive Design</p>
+<p><b>Primary Team Role:</b> UI/UX Lead and Brand Development</p>
+<p><b>Contributions:</b> UI/UX, Branding, Graphic Design and Responsive Framework Implemendation</p>
 <br>
 
 <h2><u>What We Used:</u></h2>
